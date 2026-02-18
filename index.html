@@ -41,10 +41,6 @@
         .main-name span { color: var(--primary-blue); } 
         .slogan { font-size: 0.55rem; font-weight: 685; margin-top: 5px; color: var(--success); text-transform: uppercase; display: flex; align-items: center; gap: 4px; letter-spacing: 0.2px; } 
 
-        .search-container { flex: 1; max-width: 280px; margin: 0 20px; display: flex; }
-        .search-container input { width: 100%; padding: 10px 15px; border-radius: 8px 0 0 8px; border: 1px solid var(--border); background: var(--bg-body); color: var(--text-main); outline: none; }
-        .search-container button { background: var(--primary-blue); border: none; padding: 0 15px; border-radius: 0 8px 8px 0; color: #fff; cursor: pointer; } 
-
         .nav-tools { display: flex; align-items: center; gap: 15px; }
         .cart-icon { cursor:pointer; width: 42px; height: 42px; display:flex; align-items:center; justify-content:center; border-radius: 50%; background: var(--bg-body); border: 1px solid var(--border); position: relative; }
         #cartCount { position: absolute; top: -5px; right: -5px; background: var(--danger); color: #fff; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 0.7rem; } 
@@ -89,6 +85,16 @@
 
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 3000; display: none; align-items: center; justify-content: center; padding: 20px; }
         .modal-overlay.active { display: flex; }
+        
+        #cartModal { justify-content: flex-end; padding: 0; }
+        #cartModal .modal-content { 
+            height: 100vh; width: 100%; max-width: 400px; 
+            border-radius: 0; display: flex; flex-direction: column; 
+            transform: translateX(100%); transition: transform 0.3s ease;
+            padding: 30px;
+        }
+        #cartModal.active .modal-content { transform: translateX(0); }
+
         .modal-content { background: var(--bg-card); border-radius: 15px; width: 100%; max-width: 800px; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; position: relative;}
         
         .close-btn { position: absolute; top: 15px; right: 15px; background: var(--danger); border: none; width: 35px; height: 35px; border-radius: 50%; color: white; font-size: 1.1rem; cursor: pointer; z-index: 50; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
@@ -107,24 +113,47 @@
         .dot { width: 8px; height: 8px; background: #ccc; border-radius: 50%; cursor: pointer; }
         .dot.active { background: var(--primary-blue); } 
 
-        .modal-actions { display: flex; flex-direction: column; gap: 10px; } 
-
-        #cartModal .modal-content { display: block; max-width: 450px; padding: 25px; }
         .cart-item { display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; margin-bottom: 12px; border-bottom: 1px solid var(--border); }
         .cart-item-title { font-size: 0.9rem; font-weight: 500; }
         .cart-item-price { color: var(--primary-blue); font-weight: bold; font-size: 0.95rem; }
         .cart-remove { color: var(--danger); cursor: pointer; margin-left: 10px; padding: 5px; }
 
         .mobile-categories { display: none; }
+
+        /* ==========================================================================
+           📱 AJUSTES MOBILE (CORREÇÃO DE SOBREPOSIÇÃO)
+           ========================================================================== */
         @media (max-width: 768px) {
-            body { padding-top: 130px; }
-            .container { grid-template-columns: 1fr; }
+            nav { height: 80px; } /* Diminuído a barra para ganhar espaço */
+            .logo-img { height: 50px; }
+            .main-name { font-size: 1.3rem; }
+            
+            body { padding-top: 150px; } /* Aumentado para empurrar os produtos para baixo */
+            
+            .container { grid-template-columns: 1fr; padding-top: 10px; }
             .sidebar { display: none; }
-            .mobile-categories { display: flex; position: fixed; top: 90px; left: 0; width: 100%; background: var(--bg-card); padding: 10px; gap: 10px; overflow-x: auto; z-index: 999; border-bottom: 1px solid var(--border); }
-            .chip { padding: 8px 15px; background: var(--bg-body); border-radius: 20px; white-space: nowrap; font-size: 0.8rem; border: 1px solid var(--border); }
-            .chip.active { background: var(--primary-blue); color: white; }
+            
+            .mobile-categories { 
+                display: flex; 
+                position: fixed; 
+                top: 80px; /* Alinhado exatamente onde termina a nav */
+                left: 0; 
+                width: 100%; 
+                background: var(--bg-card); 
+                padding: 12px 10px; 
+                gap: 10px; 
+                overflow-x: auto; 
+                z-index: 999; 
+                border-bottom: 1px solid var(--border);
+                box-shadow: 0 4px 6px -1px rgba(0,0,0,0.2);
+            }
+            
+            .chip { padding: 8px 18px; background: var(--bg-body); border-radius: 20px; white-space: nowrap; font-size: 0.85rem; border: 1px solid var(--border); }
+            .chip.active { background: var(--primary-blue); color: white; border-color: var(--primary-blue); }
+            
+            .products-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
             .modal-content { grid-template-columns: 1fr; max-height: 90vh; overflow-y: auto; }
-            .products-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+            #cartModal .modal-content { max-width: 85%; }
         }
     </style>
 </head>
@@ -135,10 +164,9 @@
             <img src="cw_logo_black.png" alt="CASA WINDOWS" class="logo-img">
             <div class="brand-text">
                 <div class="main-name">CASA<span>WINDOWS</span></div>
-                <div class="slogan"><i class="fas fa-shield-check"></i> Servicos Com Garantia e Nota Fiscal</div>
+                <div class="slogan"><i class="fas fa-shield-check"></i> Serviços Com Garantia e Nota Fiscal</div>
             </div>
         </a>
-        <div class="search-container"><input type="text" placeholder="Pesquisar..." onkeyup="search()"><button><i class="fas fa-search"></i></button></div>
         <div class="nav-tools">
             <div class="cart-icon" onclick="openCart()">
                 <i class="fas fa-shopping-cart"></i>
@@ -202,7 +230,6 @@
     <div class="modal-overlay" id="productModal" onclick="closeModal(event)">
         <div class="modal-content">
             <button class="close-btn" onclick="document.getElementById('productModal').classList.remove('active')"><i class="fas fa-times"></i></button>
-
             <div class="carousel-container" id="carouselContainer">
                 <button class="carousel-btn prev" onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></button>
                 <div class="carousel-track" id="carouselTrack"></div>
@@ -213,7 +240,7 @@
                 <h2 id="modalTitle" style="margin-bottom:10px; padding-right: 25px;"></h2>
                 <p id="modalDesc" style="font-size:0.9rem; opacity:0.8; margin-bottom:20px; white-space:pre-line;"></p>
                 <h3 id="modalPrice" style="color:var(--primary-blue); font-size:1.8rem; margin-bottom:20px;"></h3>
-                <div class="modal-actions">
+                <div class="modal-actions" style="display: flex; flex-direction: column; gap: 10px;">
                     <button class="btn-buy" id="modalBtnWA" style="padding:15px;"><i class="fab fa-whatsapp"></i> <span id="textBtnWA">Comprar</span></button>
                     <button class="btn-cart-add" id="modalBtnCart" style="padding:12px;"><i class="fas fa-cart-plus"></i> Adicionar ao Carrinho</button>
                     <button class="btn-share-modal" onclick="shareCurrentModalProduct()"><i class="fas fa-share-alt"></i> Partilhar Produto</button>
@@ -226,8 +253,8 @@
         <div class="modal-content">
             <button class="close-btn" onclick="document.getElementById('cartModal').classList.remove('active')"><i class="fas fa-times"></i></button>
             <h2 style="margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 15px;">Seu Carrinho</h2>
-            <div id="cartItemsList" style="max-height: 300px; overflow-y: auto; margin-bottom: 20px; padding-right: 10px;"></div>
-            <div style="display: flex; justify-content: space-between; font-size: 1.3rem; font-weight: 800; margin-bottom: 20px;">
+            <div id="cartItemsList" style="flex: 1; overflow-y: auto; margin-bottom: 20px; padding-right: 10px;"></div>
+            <div style="display: flex; justify-content: space-between; font-size: 1.3rem; font-weight: 800; margin-bottom: 20px; border-top: 1px solid var(--border); padding-top: 15px;">
                 <span>Total:</span>
                 <span id="cartTotal" style="color: var(--primary-blue)">0 MT</span>
             </div>
@@ -241,16 +268,12 @@
         let currentModalProductId = null;
 
         const bancoDeDados = [
-            // ÁUDIO - ALUGUER
             { id: 6, tag: 'audio-aluguer', isAluguer: true, nome: 'Coluna Bluetooth Express Portátil', preco: 1000, imagens: ['EXPRESS _1000MT.jpg'], desc: '• Autonomia: 4-6h\n• USB/SD/Aux\n• LEDs' },
             { id: 1, tag: 'audio-aluguer', isAluguer: true, nome: 'Básico (100 pessoas)', preco: 2500, imagens: ['Básico_100_pessoas1.jpg'], desc: '• 1 Coluna Amplificada\n• 1 Coluna Passiva\n• 1 Microfone' },
             { id: 2, tag: 'audio-aluguer', isAluguer: true, nome: 'Classico (500 pessoas)', preco: 3000, imagens: ['CLÁSSICA (200 pessoas).jpg'], desc: '• 1 Bass única\n• 1 Top\n• 2 Microfones\n• Mesa' },
             { id: 3, tag: 'audio-aluguer', isAluguer: true, nome: 'PRO (1000 pessoas)', preco: 5000, imagens: ['Pro(500 pessoas)1.jpg', 'PRO(500 pessoas)2.jpg'], desc: '• 1 Bass dupla\n• 2 Tops\n• 2 Microfones\n• Mesa/Crossover' },
             { id: 4, tag: 'audio-aluguer', isAluguer: true, nome: 'Prémio (2000 pessoas)', preco: 10000, imagens: ['PRÉMIO.jpg'], desc: '• 2 Bass dupla\n• 4 Tops\n• 4 Microfones' },
-            
-            // PROCESSADORES (PC) - Imagem 4 agora é a primeira (capa)
             { id: 101, tag: 'pc-hardware', isAluguer: false, nome: 'Processadores de Alta Performance', preco: 9000, imagens: ['PROCESSADORES 9,000MT4.png', 'PROCESSADORES 9,000MT.jpg', 'PROCESSADORES 9,000MT3.jpg', 'PROCESSADORES 9,000MT9.webp'], desc: 'Processadores para upgrades e montagem de computadores.\n• Vários modelos disponíveis\n• Alta velocidade de processamento' },
-            
             { id: 102, tag: 'pc-hardware', isAluguer: false, nome: 'Memórias RAM Profissionais', preco: 1500, imagens: ['MEMORIAS RAM 1500MT.jpg', 'MEMORIAS RAM 1500MT1.jpg'], desc: 'Upgrade de memória para o seu PC ou Laptop.\n• Estabilidade garantida\n• Aumento imediato de performance' },
             { id: 103, tag: 'pc-acessorios', isAluguer: false, nome: 'Suporte de Notebook Ergonómico', preco: 750, imagens: ['SUPORTE DE NOTEBOOK = 750MT.jpg', 'SUPORTE DE NOTEBOOK = 750MT.webp'], desc: 'Suporte ajustável para melhor postura.\n• Evita o aquecimento do portátil\n• Portátil e resistente' },
             { id: 104, tag: 'acessorios', isAluguer: false, nome: 'Cartões de Memória', preco: 350, imagens: ['CARTÕES DE MEMÓRIA .jpeg'], desc: 'Expansão de armazenamento para câmeras e telemóveis.' },
@@ -261,7 +284,6 @@
             { id: 109, tag: 'audio-venda', isAluguer: false, nome: 'Tweeter de Colunas (Par)', preco: 400, imagens: ['TWEETER DE CULUNAS 400MT.jpeg', 'TWEETER DE CULUNAS 400MTr.png', 'TWEETER DE CULUNAS 400MTe.png', 'TWEETER DE CULUNAS 400MTtr.png', 'TWEETER DE CULUNAS 400MTh.jpeg', 'TWEETER DE CULUNAS 400MTk.jpg', 'TWEETER DE CULUNAS 400MT.png'], desc: 'Reposição de agudos para colunas profissionais.\n• Som nítido e potente' },
             { id: 110, tag: 'audio-venda', isAluguer: false, nome: 'AirPods Wireless', preco: 800, imagens: ['AIRPODS 800MT.jpg', 'AIRPODS 800MT00.jpg'], desc: 'Auriculares Bluetooth sem fios.\n• Conexão rápida\n• Estojo de carregamento' },
             { id: 111, tag: 'acessorios', isAluguer: false, nome: 'Máquina Encadernadora Profissional', preco: 4000, imagens: ['MAQ. ENCADERNADORA 4,000MT-.webp', 'MAQ. ENCADERNADORA 4,000MT-y.jpg'], desc: 'Equipamento robusto para encadernação de documentos.' },
-
             { id: 7, tag: 'pc-celeron', isAluguer: false, nome: 'Laptops Série Intel Celeron', preco: 15000, imagens: ['CELERON1.jpg', 'CELERON2.jpg'], desc: 'Intel celeron\n\n4GB RAM\n256GB - 512GB SSD/HDD' },
             { id: 9, tag: 'pc-corei3', isAluguer: false, nome: 'SÉRIE CORE i3', preco: 25000, imagens: ['CORE i3.jpg'], desc: '10 geração Core i3\n\n4GB RAM\n256GB - 500GB SSD/HDD\n\nBateria Excelente' },
             { id: 8, tag: 'pc-monitor', isAluguer: false, nome: 'Monitores 20" HDMI VGA DP', preco: 4500, imagens: ['MONITORES 4500MT2.jpg', 'MONITORES 4500MT1.jpg'], desc: '• Tamanho: 20 Polegadas\n• Conexões: HDMI, VGA, DP\n• Alta Resolução' },
@@ -324,7 +346,7 @@
                         <button class="btn-buy" onclick="event.stopPropagation(); buyNow(${p.id})">
                             <i class="fab fa-whatsapp"></i> ${p.isAluguer ? 'Reservar' : 'Comprar'}
                         </button>
-                        ${!p.isAluguer ? `<button class="btn-cart-add" onclick="event.stopPropagation(); addToCart(${p.id})"><i class="fas fa-cart-plus"></i> Adicionar ao Carrinho</button>` : ''}
+                        ${!p.isAluguer ? `<button class="btn-cart-add" onclick="event.stopPropagation(); addToCart(${p.id})"><i class="fas fa-cart-plus"></i> Carrinho</button>` : ''}
                     </div>
                 `).join('');
             }
@@ -395,7 +417,9 @@
 
         function addToCart(id) {
             const p = bancoDeDados.find(x => x.id === id);
-            cartItems.push(p); updateCartCount();
+            cartItems.push(p); 
+            updateCartCount();
+            openCart();
         } 
 
         function updateCartCount() { document.getElementById('cartCount').innerText = cartItems.length; } 
