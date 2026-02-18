@@ -45,7 +45,6 @@
         .top-link { color: var(--text-main); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: 0.3s; }
         .top-link:hover { color: var(--primary-blue); }
         
-        /* Ícone de Suporte Elegante */
         .support-btn { 
             display: flex; align-items: center; gap: 8px; background: var(--bg-body); 
             border: 1px solid var(--border); padding: 8px 15px; border-radius: 20px;
@@ -90,8 +89,6 @@
         .img-container img { width: 100%; height: 100%; object-fit: cover; }
         
         .product-title { font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; height: 40px; overflow: hidden; }
-        
-        /* Preço Pequeno */
         .product-price { font-size: 1.1rem; font-weight: 700; color: var(--primary-blue); margin-bottom: 15px; }
         
         .btn-buy { background: var(--whatsapp); color: white; width: 100%; padding: 10px; border-radius: 8px; border: none; font-weight: 600; cursor: pointer; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 8px; }
@@ -102,15 +99,13 @@
         .btn-share-modal:hover { background: var(--border); }
 
         /* ==========================================================================
-           🪟 MODAIS (PRODUTO & CARRINHO)
+           🪟 MODAIS
            ========================================================================== */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 3000; display: none; align-items: center; justify-content: center; padding: 20px; }
         .modal-overlay.active { display: flex; }
         
-        /* Modal Produto */
         .modal-content { background: var(--bg-card); border-radius: 15px; width: 100%; max-width: 800px; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; position: relative;}
         
-        /* Carrinho Lateral Direito */
         #cartModal { justify-content: flex-end; padding: 0; }
         #cartModal .modal-content { 
             height: 100vh; width: 100%; max-width: 400px; 
@@ -136,14 +131,18 @@
         .dot { width: 8px; height: 8px; background: #ccc; border-radius: 50%; cursor: pointer; }
         .dot.active { background: var(--primary-blue); } 
 
-        .modal-actions { display: flex; flex-direction: column; gap: 10px; } 
-
         .cart-item { display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; margin-bottom: 12px; border-bottom: 1px solid var(--border); }
         .cart-item-title { font-size: 0.9rem; font-weight: 500; }
-        .cart-item-price { color: var(--primary-blue); font-weight: bold; font-size: 0.85rem; } /* Preço menor no carrinho */
+        .cart-item-price { color: var(--primary-blue); font-weight: bold; font-size: 0.85rem; }
         .cart-remove { color: var(--danger); cursor: pointer; margin-left: 10px; padding: 5px; }
 
         .mobile-categories { display: none; }
+
+        /* Estilos do Modal de Suporte */
+        .support-options { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
+        .support-link { display: flex; align-items: center; gap: 12px; padding: 15px; border-radius: 10px; text-decoration: none; color: white; font-weight: 600; transition: 0.3s; }
+        .support-link.call { background: var(--primary-blue); }
+        .support-link.wa { background: var(--whatsapp); }
 
         /* ==========================================================================
            📱 AJUSTES MOBILE
@@ -186,9 +185,7 @@
             </div>
         </a>
         <div class="nav-tools">
-            <a href="talvez.html" class="top-link">Quem Somos</a>
-            
-            <div class="support-btn" onclick="contactSupport()">
+            <div class="support-btn" onclick="openSupportModal()">
                 <i class="fas fa-headset"></i>
                 <span>Suporte</span>
             </div>
@@ -243,7 +240,7 @@
             </div>
             
             <div class="cat-group" style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 10px;">
-                <div class="cat-header" onclick="window.location.href='talvez.html'"><i class="fas fa-info-circle"></i> Sobre Nós</div>
+                <div class="cat-header" onclick="window.location.href='talvez.html'"><i class="fas fa-users"></i> Sobre Nós</div>
             </div>
         </aside> 
 
@@ -256,6 +253,22 @@
             <div class="products-grid" id="productGrid"></div>
         </main>
     </div> 
+
+    <div class="modal-overlay" id="supportModal" onclick="closeModal(event)">
+        <div class="modal-content" style="display: block; padding: 30px; max-width: 350px;">
+            <button class="close-btn" onclick="document.getElementById('supportModal').classList.remove('active')"><i class="fas fa-times"></i></button>
+            <h2 style="margin-bottom: 10px;">Suporte</h2>
+            <p style="font-size: 0.9rem; opacity: 0.8; margin-bottom: 20px;">Como prefere contactar-nos?</p>
+            <div class="support-options">
+                <a href="tel:+258842785290" class="support-link call">
+                    <i class="fas fa-phone-alt"></i> Chamada Normal
+                </a>
+                <a href="https://wa.me/258842785290?text=Olá Casa Windows! Gostaria de obter suporte." target="_blank" class="support-link wa">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
 
     <div class="modal-overlay" id="productModal" onclick="closeModal(event)">
         <div class="modal-content">
@@ -298,15 +311,13 @@
         let cartItems = []; 
         let currentModalProductId = null;
 
+        // Banco de Dados (Mantido conforme original)
         const bancoDeDados = [
-            // ÁUDIO - ALUGUER
             { id: 6, tag: 'audio-aluguer', isAluguer: true, nome: 'Coluna Bluetooth Express Portátil', preco: 1000, imagens: ['EXPRESS _1000MT.jpg'], desc: '• Autonomia: 4-6h\n• USB/SD/Aux\n• LEDs' },
             { id: 1, tag: 'audio-aluguer', isAluguer: true, nome: 'Básico (100 pessoas)', preco: 2500, imagens: ['Básico_100_pessoas1.jpg'], desc: '• 1 Coluna Amplificada\n• 1 Coluna Passiva\n• 1 Microfone' },
             { id: 2, tag: 'audio-aluguer', isAluguer: true, nome: 'Classico (500 pessoas)', preco: 3000, imagens: ['CLÁSSICA (200 pessoas).jpg'], desc: '• 1 Bass única\n• 1 Top\n• 2 Microfones\n• Mesa' },
             { id: 3, tag: 'audio-aluguer', isAluguer: true, nome: 'PRO (1000 pessoas)', preco: 5000, imagens: ['Pro(500 pessoas)1.jpg', 'PRO(500 pessoas)2.jpg'], desc: '• 1 Bass dupla\n• 2 Tops\n• 2 Microfones\n• Mesa/Crossover' },
             { id: 4, tag: 'audio-aluguer', isAluguer: true, nome: 'Prémio (2000 pessoas)', preco: 10000, imagens: ['PRÉMIO.jpg'], desc: '• 2 Bass dupla\n• 4 Tops\n• 4 Microfones' },
-            
-            // PROCESSADORES (PC)
             { id: 101, tag: 'pc-hardware', isAluguer: false, nome: 'Processadores de Alta Performance', preco: 9000, imagens: ['PROCESSADORES 9,000MT4.png', 'PROCESSADORES 9,000MT.jpg', 'PROCESSADORES 9,000MT3.jpg', 'PROCESSADORES 9,000MT9.webp'], desc: 'Processadores para upgrades e montagem de computadores.\n• Vários modelos disponíveis\n• Alta velocidade de processamento' },
             { id: 102, tag: 'pc-hardware', isAluguer: false, nome: 'Memórias RAM Profissionais', preco: 1500, imagens: ['MEMORIAS RAM 1500MT.jpg', 'MEMORIAS RAM 1500MT1.jpg'], desc: 'Upgrade de memória para o seu PC ou Laptop.\n• Estabilidade garantida\n• Aumento imediato de performance' },
             { id: 103, tag: 'pc-acessorios', isAluguer: false, nome: 'Suporte de Notebook Ergonómico', preco: 750, imagens: ['SUPORTE DE NOTEBOOK = 750MT.jpg', 'SUPORTE DE NOTEBOOK = 750MT.webp'], desc: 'Suporte ajustável para melhor postura.\n• Evita o aquecimento do portátil\n• Portátil e resistente' },
@@ -352,8 +363,6 @@
             { id: 39, tag: 'audio-venda', isAluguer: false, nome: 'Conector Jack (Pino)', preco: 100, imagens: ['PINO JACK 100MT .jpg', 'PINO JACK 100MT 2.jpg', 'PINO JACK 100MT 3.jpg'], desc: 'Ficha Jack P10 metálica.' },
             { id: 40, tag: 'moda', isAluguer: false, nome: 'Sapatilhas Stan Smith', preco: 1300, imagens: ['STAN SMITH 1,300MT.jpg', 'STAN SMITH 1,300MT4.jpg', 'STAN SMITH 1,300MT44.jpg', 'STAN SMITH 1,300MT3.jpg', 'STAN SMITH 1,300MT_1.jpg'], desc: 'Sapatilhas clássicas.' },
             { id: 41, tag: 'moda', isAluguer: false, nome: 'Sapatilhas AirForce', preco: 1300, imagens: [`AIRFORCE 1,300MT.jpg`, `AIRFORCE 1,300MT1_.jpg`, `AIRFORCE 1,300MT2.jpg`, `AIRFORCE 1,300MT4.jpg`, `AIRFORCE 1,300MT6.jpeg`], desc: 'Estilo icónico e durabilidade.' },
-
-            // NOVOS PRODUTOS
             { id: 112, tag: 'acessorios', isAluguer: false, nome: 'Carregadores de Celulares', preco: 100, imagens: ['CARREGADORES DE CELULARES 100MT.png', 'CARREGADORES DE CELULARES 100MT4.png'], desc: 'Carregador compatível com diversos modelos.' },
             { id: 113, tag: 'acessorios', isAluguer: false, nome: 'Cabos Cell USB', preco: 50, imagens: ['CABOS CELL 50MT.png', 'CABOS CELL 50MTt.png', 'CABOS CELL 50MTg.png', 'CABOS CELL 50MT1.png'], desc: 'Cabo de dados e carregamento resistente.' },
             { id: 114, tag: 'pc-acessorios', isAluguer: false, nome: 'HDMI 3 em 1 Switch', preco: 300, imagens: ['HDMI 3 EM 1.png', 'HDMI 3 EM 1 1.png'], desc: 'Switch HDMI para ligar múltiplos dispositivos.' },
@@ -411,12 +420,16 @@
         function shareProduct(id) {
             const p = bancoDeDados.find(x => x.id === id);
             if (!p) return;
-            const url = window.location.origin + window.location.pathname + '?id=' + id;
+            const baseUrl = window.location.href.split('?')[0];
+            const url = `${baseUrl}?id=${id}`;
+            const shareText = `Veja este produto na Casa Windows: ${p.nome}`;
             if (navigator.share) {
-                navigator.share({ title: p.nome, text: `Veja este produto na Casa Windows: ${p.nome}`, url: url }).catch(console.error);
-            } else {
-                navigator.clipboard.writeText(url); alert("Link de partilha copiado: " + url);
-            }
+                navigator.share({ title: 'Casa Windows', text: shareText, url: url }).catch(err => copyToClipboard(url));
+            } else { copyToClipboard(url); }
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => alert("Link do produto copiado com sucesso!")).catch(err => alert("Erro ao copiar link."));
         }
 
         function shareCurrentModalProduct() { if(currentModalProductId) shareProduct(currentModalProductId); }
@@ -432,6 +445,7 @@
 
         function openModal(id) {
             const p = bancoDeDados.find(x => x.id === id);
+            if(!p) return;
             currentModalProductId = id;
             document.getElementById('modalTitle').innerText = p.nome;
             document.getElementById('modalDesc').innerText = p.desc;
@@ -462,13 +476,11 @@
             dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
         }
         
-        function closeModal(e) { if(e.target.id === 'productModal' || e.target.id === 'cartModal') { e.target.classList.remove('active'); } }
+        function closeModal(e) { if(e.target.id === 'productModal' || e.target.id === 'cartModal' || e.target.id === 'supportModal') { e.target.classList.remove('active'); } }
         function toggleSubMenu(id) { document.getElementById(id).classList.toggle('active'); }
 
-        // Função de suporte via WhatsApp com ícone elegante no Header
-        function contactSupport() {
-            const msg = "Olá Casa Windows! Gostaria de obter suporte ou informações sobre os vossos serviços.";
-            window.open(`https://wa.me/${SEU_WHATSAPP}?text=${encodeURIComponent(msg)}`);
+        function openSupportModal() {
+            document.getElementById('supportModal').classList.add('active');
         }
 
         function buyNow(id) {
