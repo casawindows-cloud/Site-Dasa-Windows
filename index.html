@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="shortcut icon" href="cw_logo_black.png">
-    
-    <link rel="icon" type="image/png" href="cw_logo_black.png">
-    <link rel="apple-touch-icon" href="cw_logo_black.png">
+    <link id="meu-favicon" rel="icon" type="image/png" href="cw_logo_white.png">
+    <link rel="apple-touch-icon" href="cw_logo_white.png">
     
     <title>CASA WINDOWS | Store & Aluguer</title>
 
@@ -20,7 +18,7 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "CASA WINDOWS",
-      "image": "cw_logo_black.png",
+      "image": "cw_logo_white.png",
       "@id": "https://casawindows.online",
       "url": "https://casawindows.online",
       "telephone": "+258842785290",
@@ -627,6 +625,12 @@
             const urlParams = new URLSearchParams(window.location.search);
             const productId = urlParams.get('id');
             if (productId) { setTimeout(() => openModal(parseInt(productId)), 300); }
+
+            // Lógica para Favicon Dinâmico: Google lê o branco (SEO), Navegador troca para o preto
+            const favicon = document.getElementById('meu-favicon');
+            if (favicon) {
+                favicon.href = "cw_logo_black.png";
+            }
         });
     </script>
 </body>
