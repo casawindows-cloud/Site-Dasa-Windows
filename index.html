@@ -352,75 +352,72 @@
         let currentModalProductId = null;
 
         let bancoDeDados = [
-            // --- MAIS VENDIDOS E ACESSÓRIOS NO TOPO ---
-            { id: 11, tag: 'pc-acessorios', isAluguer: false, nome: 'Carregadores de Laptop Universais', preco: 1000, imagens: ['CARREGADORES 1000MT .jpg'], desc: 'Carregadores para HP, DELL, ASUS, LENOVO, TOSHIBA.' },
+            // 1. Carregadores de laptops todos tipos
+            { id: 11, tag: 'pc-acessorios', isAluguer: false, nome: 'Carregadores de Laptop Universais', preco: 1000, imagens: ['CARREGADORES 1000MT .jpg', 'CARREGADORES 1000MT 66.jpg'], desc: 'Carregadores para HP, DELL, ASUS, LENOVO, TOSHIBA.' },
+            
+            // 2. Carregadores de laptops Type-C
+            { id: 45, tag: 'acessorios', isAluguer: false, nome: 'Cabo/Adaptador Type-C', preco: 1500, imagens: ['TYPE-C 1,500MT.png', 'TYPE-C 1,500MT4.png', 'TYPE-C 1,500MT6.webp'], desc: 'Acessórios USB Type-C.' },
+
+            // 3. Laptops série Celeron
+            { id: 7, tag: 'pc-celeron', isAluguer: false, nome: 'Laptops Série Intel Celeron', preco: 15000, imagens: ['CELERON.jpg', 'CELERON1.jpg', 'CELERON2.jpg', 'CELERON3.jpg', 'CELERON4.jpg'], desc: '■ 4GB - 8GB Ram\n■ 256GB - 512GB SSD/HDD\n■ Bateria Excelente' },
+
+            // 4. Laptops série core i3
+            { id: 9, tag: 'pc-corei3', isAluguer: false, nome: 'SÉRIE CORE i3', preco: 25000, imagens: ['CORE i3.jpg', 'CORE i3 4.webp', 'CORE i3 8.jpeg', 'CORE i3 9.jpg', 'CORE i3 222.jpeg'], desc: '■ Core i3,\n■ 10ª - 13ª geração\n■ 4GB - 8GB Ram\n■ 256GB - 512GB SSD/HDD\n■ CPU 1.10GHZ - 3.00GHZ\n■ Bateria Excelente' },
+
+            // 5. Laptops série core i5
+            { id: 43, tag: 'pc-corei5', isAluguer: false, nome: 'Laptop Série Core i5', preco: 35000, imagens: ['SÉRIE CORE i5 35,000MT.png', 'SÉRIE CORE i5 35,000MT1.jpg', 'SÉRIE CORE i5 35,000MT4.jpeg', 'SÉRIE CORE i5 35,000MT7.jpg'], desc: '■ Core i5,\n■ 10ª - 13ª geração\n■ 4GB - 8GB Ram\n■ 256GB - 512GB SSD/HDD\n■ CPU 1.10GHZ - 3.00GHZ\n■ Bateria Excelente' },
+
+            // 6. Projectores VGA 500 Polegadas
+            { id: 15, tag: 'pc-projector', isAluguer: false, nome: 'Projector Standard', preco: 10000, imagens: ['PROJECTOR 10,000MT.jpg', 'PROJECTOR 10,000MT2.jpg', 'PROJECTOR 10,000MT4.jpg'], desc: 'Projector de vídeo.' },
+
+            // 7. Projectores HDMI 1000 polegadas
+            { id: 16, tag: 'pc-projector', isAluguer: false, nome: 'Projector Show Profissional', preco: 15000, imagens: ['SHOW 15,000MT .jpeg', 'SHOW 15,000MT (7).jpeg', 'SHOW 15,000MT 2.webp', 'SHOW 15,000MT 5.jpeg', 'SHOW 15,000MT 25.webp', 'SHOW 15,000MT 47.jpg'], desc: 'Projector de alta luminosidade.' },
+
+            // 8. Desktops completo
+            { id: 12, tag: 'pc-desktop', isAluguer: false, nome: 'Computador Desktop', preco: 12000, imagens: ['DESKTOP_12,000MT.jpg'], desc: 'Computador Desktop de excelente performance.\nIdeal para escritórios e uso doméstico.' },
+
+            // 9. Monitores
+            { id: 8, tag: 'pc-monitor', isAluguer: false, nome: 'Monitores 20" HDMI VGA DP', preco: 4500, imagens: ['MONITORES 4500MT.jpg', 'MONITORES 4500MT1.jpg', 'MONITORES 4500MT2.jpg', 'MONITORES 4500MT3.jpg'], desc: '• Tamanho: 20 Polegadas\n• Conexões: HDMI, VGA, DP\n• Alta Resolução' },
+
+            // 10. Processadores
+            { id: 101, tag: 'pc-hardware', isAluguer: false, nome: 'Processadores de Alta Performance', preco: 9000, imagens: ['PROCESSADORES 9,000MT.jpg', 'PROCESSADORES 9,000MT3.jpg', 'PROCESSADORES 9,000MT4.png', 'PROCESSADORES 9,000MT9.webp'], desc: 'Processadores para upgrades e montagem de computadores.' },
+            { id: 133, tag: 'pc-hardware', isAluguer: false, nome: 'Mini Processador NUC', preco: 6000, imagens: ['MINI PROCESSADORE NUC 6,000MT.png'], desc: 'Computador compacto.' },
+
+            // 11. Memórias Ram
+            { id: 102, tag: 'pc-hardware', isAluguer: false, nome: 'Memórias RAM Profissionais', preco: 1500, imagens: ['MEMORIAS RAM 1500MT.jpg', 'MEMORIAS RAM 1500MT1.jpg'], desc: 'Upgrade de memória para o seu PC ou Laptop.' },
+
+            // 12. Disco interno/externo SSD
+            { id: 131, tag: 'pc-hardware', isAluguer: false, nome: 'Disco Interno SSD', preco: 1500, imagens: ['DISCO SSD 1,500MT.png'], desc: 'Upgrade de velocidade imediato para seu PC.' },
+
+            // 13. Disco interno/externo HDD
+            { id: 132, tag: 'pc-hardware', isAluguer: false, nome: 'Disco Rígido HDD', preco: 1500, imagens: ['DISCO HDD 1,500MT.png'], desc: 'Ampla capacidade.' },
+            { id: 21, tag: 'pc-acessorios', isAluguer: false, nome: 'Case para HDD 2.5"', preco: 400, imagens: ['CASE HDD 400MT.jpg', 'CASE HDD 400MT2.jpg', 'CASE HDD 400MT3.jpeg'], desc: 'Caixa externa para disco.' },
+
+            // 14. Outros . . .
             { id: 112, tag: 'acessorios', isAluguer: false, nome: 'Carregadores de Celulares', preco: 100, imagens: ['CARREGADORES DE CELULARES 100MT.png', 'CARREGADORES DE CELULARES 100MT4.png'], desc: 'Carregador compatível com diversos modelos.' },
-            { id: 48, tag: 'acessorios', isAluguer: false, nome: 'Carregador de Telemóvel Standard', preco: 400, imagens: ['PHONE CHARGERS 400Mt3.png', 'PHONE CHARGERS 400Mt5.png', 'PHONE CHARGERS 400MT.png'], desc: 'Carregador completo de boa qualidade.' },
+            { id: 48, tag: 'acessorios', isAluguer: false, nome: 'Carregador de Telemóvel Standard', preco: 400, imagens: ['PHONE CHARGERS 400MT.png', 'PHONE CHARGERS 400Mt3.png', 'PHONE CHARGERS 400Mt5.png'], desc: 'Carregador completo de boa qualidade.' },
             { id: 49, tag: 'acessorios', isAluguer: false, nome: 'Carregador de Telemóvel Rápido', preco: 600, imagens: ['PHONE CHARGERS 600Mt.png'], desc: 'Carregador com suporte a carregamento rápido.' },
-            { id: 110, tag: 'audio-venda', isAluguer: false, nome: 'AirPods Wireless', preco: 800, imagens: ['AIRPODS 800MT.jpg', 'AIRPODS 800MT00.jpg'], desc: 'Auriculares Bluetooth sem fios.\n• Conexão rápida\n• Estojo de carregamento' },
-            { id: 115, tag: 'audio-venda', isAluguer: false, nome: 'AirPods Normal Wireless', preco: 350, imagens: ['AIRPODS NORMAL 350MT.png', 'AIRPODS NORMAL 350MTh.png', 'AIRPODS NORMAL 350MTy.png'], desc: 'Auscultadores Bluetooth ergonómicos.' },
-            { id: 129, tag: 'audio-venda', isAluguer: false, nome: 'Auricular a Fio Standard', preco: 50, imagens: ['AURICULAR A FIO 50MT.png', 'AURICULAR A FIO 50MTr.png', 'AURICULAR A FIO 50MTf.png', 'AURICULAR A FIO 50MTv.png', 'AURICULAR A FIO 50MTe.png', 'AURICULAR A FIO 50MTy.png'], desc: 'Auscultadores com fio simples e eficazes.' },
-            { id: 46, tag: 'acessorios', isAluguer: false, nome: 'Cabo de Dados Original', preco: 100, imagens: ['ORIGINAL PHONE CABLE 100MT .png', 'ORIGINAL PHONE CABLE 100MT 2.png', 'ORIGINAL PHONE CABLE 100MT 3.png', 'ORIGINAL PHONE CABLE 100MT 90.png', 'ORIGINAL PHONE CABLE 100MT 8.png'], desc: 'Cabo de dados e carregamento para telemóveis.' },
+            { id: 47, tag: 'acessorios', isAluguer: false, nome: 'Cabeça de Carregador', preco: 200, imagens: ['CABEÇA CHARGER PHONE 200MT .png', 'CABEÇA CHARGER PHONE 200MT 2.png', 'CABEÇA CHARGER PHONE 200MT e.png', 'CABEÇA CHARGER PHONE 200MT r.png', 'CABEÇA CHARGER PHONE 200MT ty.png'], desc: 'Adaptador de tomada.' },
+            { id: 46, tag: 'acessorios', isAluguer: false, nome: 'Cabo de Dados Original', preco: 100, imagens: ['ORIGINAL PHONE CABLE 100MT .png', 'ORIGINAL PHONE CABLE 100MT 2.png', 'ORIGINAL PHONE CABLE 100MT 3.png', 'ORIGINAL PHONE CABLE 100MT 8.png', 'ORIGINAL PHONE CABLE 100MT 90.png'], desc: 'Cabo de dados e carregamento para telemóveis.' },
             { id: 113, tag: 'acessorios', isAluguer: false, nome: 'Cabos Cell USB', preco: 50, imagens: ['CABOS CELL 50MT.png', 'CABOS CELL 50MTt.png', 'CABOS CELL 50MTg.png', 'CABOS CELL 50MT1.png'], desc: 'Cabo de dados e carregamento resistente.' },
             { id: 105, tag: 'acessorios', isAluguer: false, nome: 'Powerbank de Alta Capacidade', preco: 1000, imagens: ['POWERBANK 1000MT .png', 'POWERBANK 1000MT 2.jpg', 'POWERBANK 1000MT 00.jpg', 'POWERBANK 1000MT 44.jpeg'], desc: 'Energia extra para o seu dia.\n• Múltiplas cargas\n• Design compacto' },
-            
-            // --- COMPUTADORES E HARDWARE ---
-            { id: 7, tag: 'pc-celeron', isAluguer: false, nome: 'Laptops Série Intel Celeron', preco: 15000, imagens: ['CELERON1.jpg', 'CELERON2.jpg'], desc: 'Intel celeron\n\n4GB RAM\n256GB - 512GB SSD/HDD' },
-            { id: 9, tag: 'pc-corei3', isAluguer: false, nome: 'SÉRIE CORE i3', preco: 25000, imagens: ['CORE i3.jpg'], desc: '10 geração Core i3\n\n4GB RAM\n256GB - 500GB SSD/HDD\n\nBateria Excelente' },
-            { id: 43, tag: 'pc-corei5', isAluguer: false, nome: 'Laptop Série Core i5', preco: 35000, imagens: ['SÉRIE CORE I5 35,000MT.png', 'SÉRIE CORE I5 35,000MT1.jpg', 'SÉRIE CORE I5 35,000MT4.jpeg', 'SÉRIE CORE I5 35,000MT7.jpg'], desc: '• Processador Intel Core i5\n• Alta performance para trabalho e design\n• Design fino e elegante' },
-            { id: 12, tag: 'pc-desktop', isAluguer: false, nome: 'Computador Desktop', preco: 12000, imagens: ['DESKTOP_12,000MT.jpg'], desc: 'Computador Desktop de excelente performance.\nIdeal para escritórios e uso doméstico.' },
-            { id: 8, tag: 'pc-monitor', isAluguer: false, nome: 'Monitores 20" HDMI VGA DP', preco: 4500, imagens: ['MONITORES 4500MT2.jpg', 'MONITORES 4500MT1.jpg'], desc: '• Tamanho: 20 Polegadas\n• Conexões: HDMI, VGA, DP\n• Alta Resolução' },
-            { id: 131, tag: 'pc-hardware', isAluguer: false, nome: 'Disco Interno SSD', preco: 1500, imagens: ['DISCO SSD 1,500MT.png'], desc: 'Upgrade de velocidade imediato para seu PC.' },
-            { id: 101, tag: 'pc-hardware', isAluguer: false, nome: 'Processadores de Alta Performance', preco: 9000, imagens: ['PROCESSADORES 9,000MT4.png', 'PROCESSADORES 9,000MT.jpg', 'PROCESSADORES 9,000MT3.jpg', 'PROCESSADORES 9,000MT9.webp'], desc: 'Processadores para upgrades e montagem de computadores.' },
-            { id: 102, tag: 'pc-hardware', isAluguer: false, nome: 'Memórias RAM Profissionais', preco: 1500, imagens: ['MEMORIAS RAM 1500MT.jpg', 'MEMORIAS RAM 1500MT1.jpg'], desc: 'Upgrade de memória para o seu PC ou Laptop.' },
-            
-            // --- ÁUDIO VENDA ---
-            { id: 124, tag: 'audio-venda', isAluguer: false, nome: 'Caixa de Som Portátil', preco: 1500, imagens: ['CAIXA DE SOM 1,500MT.png', 'CAIXA DE SOM 1,500MT3.png'], desc: 'Som potente e design compacto.' },
-            { id: 125, tag: 'audio-venda', isAluguer: false, nome: 'Barra de Som (Soundbar)', preco: 1500, imagens: ['BARRA DE SOM 1,500MT.png', 'BARRA DE SOM 1,500MT5.png'], desc: 'Melhor qualidade de áudio para sua TV ou PC.' },
-            { id: 24, tag: 'audio-venda', isAluguer: false, nome: 'Headphones JBL', preco: 1000, imagens: ['JBL HEADPHONE 1000MT .jpg'], desc: 'Auscultadores com graves potentes.' },
-            { id: 31, tag: 'audio-venda', isAluguer: false, nome: 'Microfone JBL', preco: 5000, imagens: ['MICROFONE JBL 5,000MT .jpg'], desc: 'Microfone sem fios de alta fidelidade da JBL.' },
-            
-            // --- OUTROS ACESSÓRIOS ---
             { id: 106, tag: 'acessorios', isAluguer: false, nome: 'Impressora Epson EcoTank L3252', preco: 18500, imagens: ['IMPRESSORA EPSON L3252 18,500MT.jpeg'], desc: 'Impressora Multifuncional com Wi-Fi.' },
-            { id: 134, tag: 'moda', isAluguer: false, nome: 'Smart Watch Inteligente', preco: 500, imagens: ['SMART WATCH 500MT .jpg'], desc: 'Relógio com notificações e monitorização física.' },
-            { id: 40, tag: 'moda', isAluguer: false, nome: 'Sapatilhas Stan Smith', preco: 1300, imagens: ['STAN SMITH 1,300MT.jpg'], desc: 'Sapatilhas clássicas.' },
-            { id: 41, tag: 'moda', isAluguer: false, nome: 'Sapatilhas AirForce', preco: 1300, imagens: [`AIRFORCE 1,300MT.jpg`], desc: 'Estilo icónico e durabilidade.' },
-            
-            // --- ALUGUER (NO FINAL) ---
-            { id: 6, tag: 'audio-aluguer', isAluguer: true, nome: 'Coluna Bluetooth Express Portátil', preco: 1000, imagens: ['EXPRESS _1000MT.jpg'], desc: '• Autonomia: 4-6h\n• USB/SD/Aux\n• LEDs' },
-            { id: 1, tag: 'audio-aluguer', isAluguer: true, nome: 'Básico (100 pessoas)', preco: 2500, imagens: ['Básico_100_pessoas1.jpg'], desc: '• 1 Coluna Amplificada\n• 1 Coluna Passiva\n• 1 Microfone' },
-            { id: 2, tag: 'audio-aluguer', isAluguer: true, nome: 'Classico (500 pessoas)', preco: 3000, imagens: ['CLÁSSICA (200 pessoas).jpg'], desc: '• 1 Bass única\n• 1 Top\n• 2 Microfones\n• Mesa' },
-            { id: 3, tag: 'audio-aluguer', isAluguer: true, nome: 'PRO (1000 pessoas)', preco: 5000, imagens: ['Pro(500 pessoas)1.jpg'], desc: '• 1 Bass dupla\n• 2 Tops\n• 2 Microfones' },
-            { id: 4, tag: 'audio-aluguer', isAluguer: true, nome: 'Prémio (2000 pessoas)', preco: 10000, imagens: ['PRÉMIO.jpg'], desc: '• 2 Bass dupla\n• 4 Tops\n• 4 Microfones' },
-
-            // Restante dos itens originais serão mantidos via código
-            { id: 103, tag: 'pc-acessorios', isAluguer: false, nome: 'Suporte de Notebook Ergonómico', preco: 750, imagens: ['SUPORTE DE NOTEBOOK = 750MT.jpg'], desc: 'Suporte ajustável para melhor postura.' },
-            { id: 104, tag: 'acessorios', isAluguer: false, nome: 'Cartões de Memória', preco: 350, imagens: ['CARTÕES DE MEMÓRIA .jpeg'], desc: 'Expansão de armazenamento.' },
-            { id: 107, tag: 'moda', isAluguer: false, nome: 'Relógio Casio Classic Lite', preco: 250, imagens: ['RELÓGIO CASIO 250MTLite.jpg'], desc: 'Relógio digital clássico da Casio.' },
-            { id: 108, tag: 'audio-venda', isAluguer: false, nome: 'Cabo de Som XLR Profissional', preco: 500, imagens: ['CABO DE SOM XRL 500MT.png'], desc: 'Cabo balanceado.' },
-            { id: 109, tag: 'audio-venda', isAluguer: false, nome: 'Tweeter de Colunas (Par)', preco: 400, imagens: ['TWEETER DE CULUNAS 400MT.jpeg'], desc: 'Reposição de agudos.' },
+            { id: 142, tag: 'acessorios', isAluguer: false, nome: 'Tinta para Impressora Epson', preco: 150, imagens: ['TINTA EPSON 150MT.webp', 'TINTA EPSON 150MT1.jpg', 'TINTA EPSON 150MT3.png'], desc: 'Refil de tinta para impressoras Epson EcoTank.' },
             { id: 111, tag: 'acessorios', isAluguer: false, nome: 'Máquina Encadernadora Profissional', preco: 4000, imagens: ['MAQ. ENCADERNADORA 4,000MT-.webp'], desc: 'Equipamento robusto.' },
-            { id: 15, tag: 'pc-projector', isAluguer: false, nome: 'Projector Standard', preco: 10000, imagens: ['PROJECTOR 10,000MT.jpg'], desc: 'Projector de vídeo.' },
-            { id: 16, tag: 'pc-projector', isAluguer: false, nome: 'Projector Show Profissional', preco: 15000, imagens: ['SHOW 15,000MT .jpeg'], desc: 'Projector de alta luminosidade.' },
-            { id: 42, tag: 'pc-acessorios', isAluguer: false, nome: 'Macbook (Peças/Acessórios)', preco: 2000, imagens: ['MACBOOK 2,000MT.jpeg'], desc: 'Acessórios e componentes para Macbook.' },
-            { id: 17, tag: 'pc-acessorios', isAluguer: false, nome: 'Mouse Óptico', preco: 200, imagens: ['MOUSE 200MT1.png'], desc: 'Mouse prático e ergonómico.' },
-            { id: 44, tag: 'pc-acessorios', isAluguer: false, nome: 'Mouse Bluetooth', preco: 400, imagens: ['MOUSE BLUETOOTH 400MT.webp'], desc: 'Mouse sem fios.' },
-            { id: 21, tag: 'pc-acessorios', isAluguer: false, nome: 'Case para HDD 2.5"', preco: 400, imagens: ['CASE HDD 400MT.jpg'], desc: 'Caixa externa para disco.' },
+            { id: 134, tag: 'moda', isAluguer: false, nome: 'Smart Watch Inteligente', preco: 1000, imagens: ['SMARTWATCH 1000MT .jpg', 'SMARTWATCH 1000MT 2.jpg', 'SMARTWATCH 1000MT 3.jpg'], desc: 'Relógio com notificações e monitorização física.' },
+            { id: 40, tag: 'moda', isAluguer: false, nome: 'Sapatilhas Stan Smith', preco: 1300, imagens: ['STAN SMITH 1,300MT.jpg', 'STAN SMITH 1,300MT_1.jpg', 'STAN SMITH 1,300MT1.jpg', 'STAN SMITH 1,300MT1_1.jpg', 'STAN SMITH 1,300MT3.jpg', 'STAN SMITH 1,300MT4.jpg', 'STAN SMITH 1,300MT44.jpg'], desc: 'Sapatilhas clássicas.' },
+            { id: 41, tag: 'moda', isAluguer: false, nome: 'Sapatilhas AirForce', preco: 1300, imagens: ['AIRFORCE 1,300MT.jpg', 'AIRFORCE 1,300MT1_.jpg', 'AIRFORCE 1,300MT2.jpg', 'AIRFORCE 1,300MT4.jpg'], desc: 'Estilo icónico e durabilidade.' },
+            { id: 107, tag: 'moda', isAluguer: false, nome: 'Relógio Casio Classic Lite', preco: 250, imagens: ['RELÓGIO CASIO 250MTLite.jpg'], desc: 'Relógio digital clássico da Casio.' },
+            { id: 103, tag: 'pc-acessorios', isAluguer: false, nome: 'Suporte de Notebook Ergonómico', preco: 750, imagens: ['SUPORTE DE NOTEBOOK = 750MT.jpg', 'SUPORTE DE NOTEBOOK = 750MT.webp'], desc: 'Suporte ajustável para melhor postura.' },
+            { id: 104, tag: 'acessorios', isAluguer: false, nome: 'Cartões de Memória', preco: 350, imagens: ['CARTÕES DE MEMÓRIA .jpeg'], desc: 'Expansão de armazenamento.' },
+            { id: 42, tag: 'pc-acessorios', isAluguer: false, nome: 'Macbook (Peças/Acessórios)', preco: 2000, imagens: ['MACBOOK 2,000MT.jpg', 'MACBOOK 2,000MT.jpeg', 'MACBOOK 2,000MT43.png'], desc: 'Acessórios e componentes para Macbook.' },
+            { id: 17, tag: 'pc-acessorios', isAluguer: false, nome: 'Mouse Óptico', preco: 200, imagens: ['MOUSE 200MT1.png', 'MOUSE 200MT2.png', 'MOUSE 200MT3.png', 'MOUSE 200MT5.png'], desc: 'Mouse prático e ergonómico.' },
+            { id: 44, tag: 'pc-acessorios', isAluguer: false, nome: 'Mouse Bluetooth', preco: 400, imagens: ['MOUSE BLUETOOTH 400MT.jpg', 'MOUSE BLUETOOTH 400MT.webp', 'MOUSE BLUETOOTH 400MT4.webp'], desc: 'Mouse sem fios.' },
             { id: 23, tag: 'pc-acessorios', isAluguer: false, nome: 'Teclado USB', preco: 400, imagens: ['TECLADOS 400MT .jpg'], desc: 'Teclado padrão.' },
+            { id: 126, tag: 'pc-acessorios', isAluguer: false, nome: 'Mini Teclado Wireless', preco: 500, imagens: ['TECLADOS MINI 500MT2.png'], desc: 'Ideal para Smart TV.' },
+            { id: 127, tag: 'pc-acessorios', isAluguer: false, nome: 'Teclado Gamer Retroiluminado', preco: 750, imagens: ['TECLADOS GAME 750MT.png'], desc: 'Teclado ergonómico.' },
             { id: 19, tag: 'pc-acessorios', isAluguer: false, nome: 'Cabo HDMI', preco: 100, imagens: ['HDMI 100MT .jpg'], desc: 'Cabo HDMI.' },
-            { id: 18, tag: 'pc-acessorios', isAluguer: false, nome: 'Cabo de Corrente', preco: 100, imagens: ['CORRENTE 100MT.png'], desc: 'Cabo de alimentação.' },
-            { id: 45, tag: 'acessorios', isAluguer: false, nome: 'Cabo/Adaptador Type-C', preco: 1500, imagens: ['TYPE-C 1,500MT.png'], desc: 'Acessórios USB Type-C.' },
-            { id: 47, tag: 'acessorios', isAluguer: false, nome: 'Cabeça de Carregador', preco: 200, imagens: ['CABEÇA CHARGER PHONE 200MT r.png'], desc: 'Adaptador de tomada.' },
-            { id: 25, tag: 'audio-venda', isAluguer: false, nome: 'Bass Dupla Profissional', preco: 50000, imagens: ['BASS DUPLA 50,000MT1.jpg'], desc: 'Subwoofer de alta potência.' },
-            { id: 28, tag: 'audio-venda', isAluguer: false, nome: 'Coluna Top 15 Polegadas', preco: 25000, imagens: ['TOP 15 POLEGADA 25,000MT.jpg'], desc: 'Coluna Top.' },
-            { id: 32, tag: 'audio-venda', isAluguer: false, nome: 'Microfone Standard', preco: 2500, imagens: ['MICRO 2,500MT .jpg'], desc: 'Microfone sem fios.' },
-            { id: 33, tag: 'audio-venda', isAluguer: false, nome: 'Mesa de Som Profissional', preco: 8500, imagens: ['MESA DE SOM 8,500MT 23.jpg'], desc: 'Mixer de áudio.' },
-            { id: 34, tag: 'audio-venda', isAluguer: false, nome: 'Amplificador 1000W', preco: 12000, imagens: ['AMPLIFICADOR 1000W = 12,000MT3.jpg'], desc: 'Potência de 1000 Watts.' },
-            { id: 35, tag: 'audio-venda', isAluguer: false, nome: 'Amplificador 3000W', preco: 30000, imagens: ['AMPLIFICADOR 3000W = 30,000MT.jpg'], desc: 'Amplificador 3000W.' },
-            { id: 36, tag: 'audio-venda', isAluguer: false, nome: 'Crossover', preco: 5000, imagens: ['CROSSOVER 5,000MT.jpg'], desc: 'Divisor de frequências.' },
-            { id: 37, tag: 'audio-venda', isAluguer: false, nome: 'Cabo de Som 10M', preco: 2000, imagens: ['CABO DE SOM 10M = 2000MT .jpg'], desc: 'Cabo 10 metros.' },
-            { id: 38, tag: 'audio-venda', isAluguer: false, nome: 'Conector Speakon', preco: 100, imagens: ['SPEAKON PINO 100MT.png'], desc: 'Ficha Speakon.' },
-            { id: 39, tag: 'audio-venda', isAluguer: false, nome: 'Conector Jack (Pino)', preco: 100, imagens: ['PINO JACK 100MT .jpg'], desc: 'Ficha Jack P10.' },
+            { id: 18, tag: 'pc-acessorios', isAluguer: false, nome: 'Cabo de Corrente', preco: 100, imagens: ['CORRENTE 100MT.png', 'CORRENTE 100MT2.webp', 'CORRENTE2 100MT.jpg'], desc: 'Cabo de alimentação.' },
             { id: 114, tag: 'pc-acessorios', isAluguer: false, nome: 'HDMI 3 em 1 Switch', preco: 300, imagens: ['HDMI 3 EM 1.png'], desc: 'Switch HDMI.' },
             { id: 116, tag: 'pc-acessorios', isAluguer: false, nome: 'Hub de Entradas USB', preco: 750, imagens: ['HUP DE ENTRADAS USB  750MT.png'], desc: 'Expansor USB.' },
             { id: 117, tag: 'acessorios', isAluguer: false, nome: 'Bluetooth para Carro', preco: 500, imagens: ['BLUETOOTH DE CARRO 500MTS.png'], desc: 'Adaptador Bluetooth.' },
@@ -428,16 +425,45 @@
             { id: 119, tag: 'pc-acessorios', isAluguer: false, nome: 'Adaptador Multiportas DP VGA DVI', preco: 400, imagens: ['ADAPTADORES DP VGA DVI DP= 400MT.png'], desc: 'Adaptador versátil.' },
             { id: 120, tag: 'acessorios', isAluguer: false, nome: 'Estetoscópio Binário Profissional', preco: 1000, imagens: ['ESTETOSCÓPIO BINÁR 1,000MT.jpg'], desc: 'Equipamento médico.' },
             { id: 121, tag: 'acessorios', isAluguer: false, nome: 'Remotes Universais', preco: 250, imagens: ['REMOTES UNIVERSAIS = 250MT_.jpg'], desc: 'Comando universal.' },
-            { id: 122, tag: 'acessorios', isAluguer: false, nome: 'Esfigmomanómetro Manual', preco: 1500, imagens: ['ESFIGMOMANOMETRO MANUAL = 1,500MT.png'], desc: 'Aparelho de pressão.' },
+            { id: 122, tag: 'acessorios', isAluguer: false, nome: 'Esfigmomanómetro Manual', preco: 1500, imagens: ['APARELHO DE PRESSÃO 1000MT .jpg', 'APARELHO DE PRESSÃO 1000MT 2.jpg'], desc: 'Aparelho de pressão.' },
             { id: 123, tag: 'acessorios', isAluguer: false, nome: 'Álcool 70% (Higiene)', preco: 500, imagens: ['ALCOOL 70% = 500MT.png'], desc: 'Desinfetante.' },
-            { id: 126, tag: 'pc-acessorios', isAluguer: false, nome: 'Mini Teclado Wireless', preco: 500, imagens: ['TECLADOS MINI 500MT2.png'], desc: 'Ideal para Smart TV.' },
-            { id: 127, tag: 'pc-acessorios', isAluguer: false, nome: 'Teclado Gamer Retroiluminado', preco: 750, imagens: ['TECLADOS GAME 750MT.png'], desc: 'Teclado ergonómico.' },
-            { id: 128, tag: 'audio-venda', isAluguer: false, nome: 'Microfone de Lapela', preco: 7500, imagens: ['MICROFONE LAPELA 7,500MT .png'], desc: 'Microfone discreto.' },
             { id: 130, tag: 'acessorios', isAluguer: false, nome: 'Oxímetro de Pulso', preco: 400, imagens: ['OXÍMETRO 400MT.png'], desc: 'Medição de oxigénio.' },
-            { id: 132, tag: 'pc-hardware', isAluguer: false, nome: 'Disco Rígido HDD', preco: 1500, imagens: ['DISCO HDD 1,500MT.png'], desc: 'Ampla capacidade.' },
-            { id: 133, tag: 'pc-hardware', isAluguer: false, nome: 'Mini Processador NUC', preco: 6000, imagens: ['MINI PROCESSADORE NUC 6,000MT.png'], desc: 'Computador compacto.' },
             { id: 135, tag: 'pc-hardware', isAluguer: false, nome: 'Servidores de Dados', preco: 4500, imagens: ['SERVIDORES 4,500MT.jpeg'], desc: 'Infraestrutura de rede.' },
-            { id: 136, tag: 'acessorios', isAluguer: false, nome: 'Adaptador OTG', preco: 80, imagens: ['OTG 80MT.png'], desc: 'Ligue pen drives ao telemóvel.' }
+            { id: 136, tag: 'acessorios', isAluguer: false, nome: 'Adaptador OTG', preco: 80, imagens: ['OTG 80MT.png'], desc: 'Ligue pen drives ao telemóvel.' },
+            { id: 137, tag: 'acessorios', isAluguer: false, nome: 'Plástico Aderente', preco: 500, imagens: ['PLÁSTICO ADERENTES 500MT.jpg', 'PLÁSTICO ADERENTES 500MT2.jpg', 'PLÁSTICO ADERENTES 500MT3.jpg'], desc: 'Rolo de plástico aderente multiuso.' },
+            { id: 139, tag: 'pc-acessorios', isAluguer: false, nome: 'Cabos de Imagem', preco: 100, imagens: ['CABOS DE IMAGEM 100MT 1.jpg', 'CABOS DE IMAGEM 100MT 4.jpeg', 'CABOS DE IMAGEM 100MT5.jpeg'], desc: 'Cabos diversos de vídeo/imagem.' },
+
+            // 15. Colunas a venda
+            { id: 110, tag: 'audio-venda', isAluguer: false, nome: 'AirPods Wireless', preco: 800, imagens: ['AIRPODS 800MT.jpg', 'AIRPODS 800MT00.jpg'], desc: 'Auriculares Bluetooth sem fios.\n• Conexão rápida\n• Estojo de carregamento' },
+            { id: 115, tag: 'audio-venda', isAluguer: false, nome: 'AirPods Normal Wireless', preco: 350, imagens: ['AIRPODS NORMAL 350MT.png', 'AIRPODS NORMAL 350MTh.png', 'AIRPODS NORMAL 350MTy.png'], desc: 'Auscultadores Bluetooth ergonómicos.' },
+            { id: 129, tag: 'audio-venda', isAluguer: false, nome: 'Auricular a Fio Standard', preco: 50, imagens: ['AURICULAR A FIO 50MT.png', 'AURICULAR A FIO 50MTr.png', 'AURICULAR A FIO 50MTf.png', 'AURICULAR A FIO 50MTv.png', 'AURICULAR A FIO 50MTe.png', 'AURICULAR A FIO 50MTy.png'], desc: 'Auscultadores com fio simples e eficazes.' },
+            { id: 124, tag: 'audio-venda', isAluguer: false, nome: 'Caixa de Som Portátil', preco: 1500, imagens: ['CAIXA DE SOM 1,500MT.png', 'CAIXA DE SOM 1,500MT3.png'], desc: 'Som potente e design compacto.' },
+            { id: 125, tag: 'audio-venda', isAluguer: false, nome: 'Barra de Som (Soundbar)', preco: 1500, imagens: ['BARRA DE SOM 1,500MT.png', 'BARRA DE SOM 1,500MT5.png'], desc: 'Melhor qualidade de áudio para sua TV ou PC.' },
+            { id: 24, tag: 'audio-venda', isAluguer: false, nome: 'Headphones JBL', preco: 1000, imagens: ['JBL HEADPHONE 1000MT .jpg', 'JBL HEADPHONE 1000MT .png', 'JBL HEADPHONE 1000MT 1.jpg', 'JBL HEADPHONE 1000MT 4.jpg'], desc: 'Auscultadores com graves potentes.' },
+            { id: 31, tag: 'audio-venda', isAluguer: false, nome: 'Microfone JBL', preco: 5000, imagens: ['MICROFONE JBL 5,000MT .jpg', 'MICROFONE JBL 5,000MT 1.jpg'], desc: 'Microfone sem fios de alta fidelidade da JBL.' },
+            { id: 108, tag: 'audio-venda', isAluguer: false, nome: 'Cabo de Som XLR Profissional', preco: 500, imagens: ['CABO DE SOM XRL 500MT.png'], desc: 'Cabo balanceado.' },
+            { id: 109, tag: 'audio-venda', isAluguer: false, nome: 'Tweeter de Colunas (Par)', preco: 400, imagens: ['TWEETER DE CULUNAS 400MT.jpeg'], desc: 'Reposição de agudos.' },
+            { id: 25, tag: 'audio-venda', isAluguer: false, nome: 'Bass Dupla Profissional', preco: 50000, imagens: ['BASS DUPLA 50,000MT.jpg', 'BASS DUPLA 50,000MT1.jpg', 'BASS DUPLA 50,000MT3.jpg', 'BASS DUPLA 50,000MT4.jpg', 'BASS DUPLA 50,000MT7.jpg'], desc: 'Subwoofer de alta potência.' },
+            { id: 28, tag: 'audio-venda', isAluguer: false, nome: 'Coluna Top 15 Polegadas', preco: 25000, imagens: ['TOP 15 POLEGADA 25,000MT.jpg', 'TOP 15 POLEGADA 25,000MT.jpeg', 'TOP 15 POLEGADA 25,000MT.png', 'TOP 15 POLEGADA 25,000MT2.jpg', 'TOP 15 POLEGADA 25,000MT2_1.jpg', 'TOP 15 POLEGADA 25,000MT3.jpg'], desc: 'Coluna Top.' },
+            { id: 32, tag: 'audio-venda', isAluguer: false, nome: 'Microfone Standard', preco: 2500, imagens: ['MICRO 2,500MT .jpg', 'MICRO 2,500MT1.jpg'], desc: 'Microfone sem fios.' },
+            { id: 33, tag: 'audio-venda', isAluguer: false, nome: 'Mesa de Som Profissional', preco: 8500, imagens: ['MESA DE SOM 8,500MT .jpg', 'MESA DE SOM 8,500MT 2.jpg', 'MESA DE SOM 8,500MT 23.jpg'], desc: 'Mixer de áudio.' },
+            { id: 34, tag: 'audio-venda', isAluguer: false, nome: 'Amplificador 1000W', preco: 12000, imagens: ['AMPLIFICADOR 1000W = 12,000MT.jpg', 'AMPLIFICADOR 1000W = 12,000MT.png', 'AMPLIFICADOR 1000W = 12,000MT3.jpg'], desc: 'Potência de 1000 Watts.' },
+            { id: 35, tag: 'audio-venda', isAluguer: false, nome: 'Amplificador 3000W', preco: 30000, imagens: ['AMPLIFICADOR 3000W = 30,000MT.jpg'], desc: 'Amplificador 3000W.' },
+            { id: 36, tag: 'audio-venda', isAluguer: false, nome: 'Crossover', preco: 5000, imagens: ['CROSSOVER 5,000MT.jpg', 'CROSSOVER 5,000MT1.jpg', 'CROSSOVER 5,000MT3.jpg'], desc: 'Divisor de frequências.' },
+            { id: 37, tag: 'audio-venda', isAluguer: false, nome: 'Cabo de Som 10M', preco: 2000, imagens: ['CABO DE SOM 10M = 2000MT .jpg', 'CABO DE SOM 10M = 2000MT 1.png', 'CABO DE SOM 10M = 2000MT 4.jpg'], desc: 'Cabo 10 metros.' },
+            { id: 38, tag: 'audio-venda', isAluguer: false, nome: 'Conector Speakon', preco: 100, imagens: ['SPEAKON PINO 100MT.png', 'SPEAKON PINO 100MT1.png', 'SPEAKON PINO 100MT3.png'], desc: 'Ficha Speakon.' },
+            { id: 39, tag: 'audio-venda', isAluguer: false, nome: 'Conector Jack (Pino)', preco: 100, imagens: ['PINO JACK 100MT .jpg', 'PINO JACK 100MT 2.jpg', 'PINO JACK 100MT 3.jpg'], desc: 'Ficha Jack P10.' },
+            { id: 128, tag: 'audio-venda', isAluguer: false, nome: 'Microfone de Lapela', preco: 7500, imagens: ['MICROFONE LAPELA 7,500MT .png'], desc: 'Microfone discreto.' },
+            { id: 138, tag: 'audio-venda', isAluguer: false, nome: 'Bass Mono Profissional', preco: 30000, imagens: ['BASS MONO 30,000MT.jpg', 'BASS MONO 30,000MT2.webp', 'BASS MONO 30,000MT4.webp', 'BASS MONO 30,000MT6.jpg'], desc: 'Subwoofer mono de alta performance.' },
+            { id: 140, tag: 'audio-venda', isAluguer: false, nome: 'Retorno de Palco', preco: 15000, imagens: ['RETORNO 15,000MT.png', 'RETORNO 15,000MT1.jpeg', 'RETORNO 15,000MT3.jpg', 'RETORNO 15,000MT4.jpg', 'RETORNO 15,000MT6.jpg'], desc: 'Coluna de retorno de palco para músicos.' },
+            { id: 141, tag: 'audio-venda', isAluguer: false, nome: 'Torre 15 Polegadas', preco: 30000, imagens: ['TORRE 15 POLEGADA 30,000MT.jpg', 'ORRE 15 POLEGADA 30,000MT.jpg', 'ORRE 15 POLEGADA 30,000MT4.jpg', 'ORRE 15 POLEGADA 30,000MT11.jpg', 'ORRE 15 POLEGADA 30,000MT11q.jpg', 'ORRE 15 POLEGADA 30,000MTqq.jpg'], desc: 'Sistema em torre de 15 polegadas.' },
+
+            // 16. Colunas aluguer
+            { id: 6, tag: 'audio-aluguer', isAluguer: true, nome: 'Coluna Bluetooth Express Portátil', preco: 1000, imagens: ['EXPRESS _1000MT.jpg'], desc: '• Autonomia: 4-6h\n• USB/SD/Aux\n• LEDs' },
+            { id: 1, tag: 'audio-aluguer', isAluguer: true, nome: 'Básico (100 pessoas)', preco: 2500, imagens: ['Básico_100_pessoas1.jpg', 'Básico_100_pessoas2.jpg'], desc: '• 1 Coluna Amplificada\n• 1 Coluna Passiva\n• 1 Microfone' },
+            { id: 2, tag: 'audio-aluguer', isAluguer: true, nome: 'Classico (500 pessoas)', preco: 3000, imagens: ['CLÁSSICA (200 pessoas).jpg'], desc: '• 1 Bass única\n• 1 Top\n• 2 Microfones\n• Mesa' },
+            { id: 3, tag: 'audio-aluguer', isAluguer: true, nome: 'PRO (1000 pessoas)', preco: 5000, imagens: ['Pro(500 pessoas).jpg', 'Pro(500 pessoas)1.jpg', 'PRO(500 pessoas)2.jpg'], desc: '• 1 Bass dupla\n• 2 Tops\n• 2 Microfones' },
+            { id: 4, tag: 'audio-aluguer', isAluguer: true, nome: 'Prémio (2000 pessoas)', preco: 10000, imagens: ['Premium (1000 pessoas).jpg', 'PRÉMIO.jpg'], desc: '• 2 Bass dupla\n• 4 Tops\n• 4 Microfones' }
         ]; 
 
         // Adicionar preços antigos simulados
