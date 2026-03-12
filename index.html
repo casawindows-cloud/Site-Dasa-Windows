@@ -289,11 +289,20 @@ main{min-width:0}
   .nav-search input{font-size:.8rem}
   .nb span{display:none}
   .nb{width:36px;height:36px;padding:0;justify-content:center;flex-shrink:0}
-  .pgrid{grid-template-columns:1fr 1fr;gap:8px}
-  .pcard-name{font-size:.78rem}
-  .pn{font-size:.9rem}
-  .btn-wa{font-size:.72rem;padding:7px 6px}
-  .btn-ic{width:30px;height:30px;font-size:.75rem}
+  .pgrid{grid-template-columns:1fr 1fr;gap:6px}
+  .pcard-body{padding:8px}
+  .pcard-name{font-size:.72rem;margin-bottom:4px;min-height:2em}
+  .pcard-prices{margin-bottom:6px;gap:4px}
+  .pn{font-size:.85rem}
+  .po{font-size:.65rem}
+  .pdiscount{font-size:.6rem;padding:1px 4px}
+  .pcard-actions{gap:5px}
+  .btn-wa{font-size:.68rem;padding:6px 5px;gap:3px}
+  .btn-wa i{font-size:.72rem}
+  .btn-ic{width:28px;height:28px;font-size:.7rem}
+  .pcard-badges{top:6px;left:6px}
+  .pb{font-size:.55rem;padding:2px 6px}
+  .qbuy{font-size:.7rem;padding:7px}
   .prod-modal{grid-template-columns:1fr;max-height:94dvh;overflow-y:auto;border-radius:18px 18px 0 0;width:100%;align-self:flex-end;margin:0}
   #prodModal{align-items:flex-end;padding:0}
   .car{min-height:220px}
@@ -315,11 +324,21 @@ main{min-width:0}
   :root{--nav:60px}
   .brand-name{font-size:.85rem}
   .brand-tag{font-size:.45rem}
-  .pgrid{grid-template-columns:1fr 1fr;gap:6px}
+  .pgrid{grid-template-columns:1fr 1fr;gap:5px}
+  .pcard-body{padding:7px}
+  .pcard-name{font-size:.68rem}
+  .pn{font-size:.82rem}
+  .btn-wa{font-size:.65rem;padding:5px 4px}
+  .btn-ic{width:26px;height:26px;font-size:.65rem}
 }
 @media(max-width:360px){
-  .pgrid{grid-template-columns:1fr}
+  .pgrid{grid-template-columns:1fr 1fr;gap:4px}
   .brand-tag{display:none}
+  .pcard-body{padding:6px}
+  .pcard-name{font-size:.65rem}
+  .pn{font-size:.78rem}
+  .btn-wa span{display:none}
+  .btn-wa{padding:6px;justify-content:center}
 }
 </style>
 </head>
@@ -375,7 +394,7 @@ main{min-width:0}
       </div>
       <div class="tree-item">
         <div class="tree-head" id="th-audio" onclick="filterBy('audio',this);toggleTree('tc-audio',this)">
-          <span class="t-icon"><i class="fas fa-waveform-lines"></i></span>Áudio Profissional<span class="t-cnt" id="cn-audio">0</span><i class="fas fa-chevron-down t-arrow"></i>
+          <span class="t-icon"><i class="fas fa-music"></i></span>Áudio Profissional<span class="t-cnt" id="cn-audio">0</span><i class="fas fa-chevron-down t-arrow"></i>
         </div>
         <div class="tree-children" id="tc-audio">
           <div class="tree-child" onclick="filterBy('audio-aluguer',this)">Aluguer de Som</div>
@@ -404,7 +423,7 @@ main{min-width:0}
       </div>
       <div class="tree-item">
         <div class="tree-head" id="th-acessorios" onclick="filterBy('acessorios',this)">
-          <span class="t-icon"><i class="fas fa-sparkles"></i></span>Outros<span class="t-cnt" id="cn-acessorios">0</span>
+          <span class="t-icon"><i class="fas fa-box-open"></i></span>Outros<span class="t-cnt" id="cn-acessorios">0</span>
         </div>
       </div>
       <div style="margin-top:10px;border-top:1px solid var(--line);padding-top:10px">
@@ -628,10 +647,10 @@ const $=id=>document.getElementById(id);
 const fmt=n=>n.toLocaleString('pt-MZ');
 const CATS=[
   {key:'todos',label:'Ver Tudo',icon:'fa-border-all'},
-  {key:'audio',label:'Áudio',icon:'fa-waveform-lines'},
+  {key:'audio',label:'Áudio',icon:'fa-music'},
   {key:'pc',label:'Computadores',icon:'fa-laptop'},
   {key:'moda',label:'Moda',icon:'fa-shirt'},
-  {key:'acessorios',label:'Outros',icon:'fa-sparkles'},
+  {key:'acessorios',label:'Outros',icon:'fa-box-open'},
 ];
 const CAT_LABELS={
   'todos':'Todos os Produtos','audio':'Áudio Profissional',
@@ -817,21 +836,20 @@ function toast(msg,icon='fa-check'){
 }
 window.addEventListener('scroll',()=>{$('btt').classList.toggle('on',window.scrollY>400);},{passive:true});
 const FOOTER_ICONS=[
-  {label:'Aluguer Som',icon:null,img:'kit_express.jpg',filter:'audio-aluguer'},
-  {label:'Kits Pro',icon:null,img:'kit_golden.jpg',filter:'audio-aluguer'},
+  {label:'Aluguer Som',icon:'fa-tower-broadcast',img:null,filter:'audio-aluguer'},
   {label:'Computadores',icon:'fa-laptop',img:null,filter:'pc'},
-  {label:'Laptops i5',icon:null,img:'SÉRIE CORE i5 35,000MT.png',filter:'pc-corei5'},
-  {label:'Monitores',icon:null,img:'MONITORES 4500MT.jpg',filter:'pc-monitor'},
-  {label:'Áudio Venda',icon:null,img:'BASS DUPLA 50,000MT.jpg',filter:'audio-venda'},
-  {label:'Acessórios',icon:'fa-sparkles',img:null,filter:'acessorios'},
+  {label:'Laptops i3',icon:'fa-computer',img:null,filter:'pc-corei3'},
+  {label:'Laptops i5',icon:'fa-microchip',img:null,filter:'pc-corei5'},
+  {label:'Monitores',icon:'fa-desktop',img:null,filter:'pc-monitor'},
+  {label:'Audio Venda',icon:'fa-music',img:null,filter:'audio-venda'},
+  {label:'Acessorios',icon:'fa-box-open',img:null,filter:'acessorios'},
   {label:'Moda',icon:'fa-shirt',img:null,filter:'moda'},
 ];
 function buildFooter(){
   const wrap=$('footerIcons');if(!wrap)return;
   wrap.innerHTML=FOOTER_ICONS.map((fi,i)=>{
     const iconHtml=fi.img?`<div class="fi-icon"><img src="${fi.img}" alt="${fi.label}" loading="lazy"></div>`:`<div class="fi-icon ic"><i class="fas ${fi.icon}"></i></div>`;
-    const div=i===4?'<div class="footer-div"></div>':'';
-    return`${div}<div class="fi" onclick="footerGoTo('${fi.filter}')">${iconHtml}<span class="fi-label">${fi.label}</span></div>`;
+    return`<div class="fi" onclick="footerGoTo('${fi.filter}')">${iconHtml}<span class="fi-label">${fi.label}</span></div>`;
   }).join('');
 }
 function footerGoTo(filter){
