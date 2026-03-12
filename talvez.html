@@ -3,1558 +3,393 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link id="meu-favicon" rel="icon" type="image/png" href="cw_logo_blue.png">
-<link rel="apple-touch-icon" href="cw_logo_blue.png">
-<title>CASA WINDOWS | Store & Aluguer</title>
-<meta name="description" content="CASA WINDOWS | Loja especializada em venda de computadores, acessórios e aluguer de som profissional em Moçambique.">
-<meta name="author" content="CASA WINDOWS">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"CASA WINDOWS","url":"https://casawindows.online","telephone":"+258842785290","address":{"@type":"PostalAddress","addressLocality":"Nampula","addressCountry":"MZ"}}</script>
+<link rel="icon" type="image/png" href="cw_logo_blue.png">
+<title>Sobre Nós | CASA WINDOWS</title>
+<meta name="description" content="Conheça a Casa Windows — fundada em 2018 em Nampula, Moçambique. Tecnologia, som profissional e serviços com garantia.">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Familjen+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-/* ═══════════════════════════════════════════════════
-   TOKENS
-═══════════════════════════════════════════════════ */
-:root {
-  --bg:        #07080a;
-  --bg2:       #0d0f12;
-  --bg3:       #131619;
-  --bg4:       #181b1f;
-  --bg5:       #1e2127;
-  --line:      rgba(255,255,255,0.06);
-  --line2:     rgba(255,255,255,0.10);
-  --txt:       #f0f2f5;
-  --txt2:      #9aa3b0;
-  --txt3:      #5e6673;
-  --blue:      #2a7de1;
-  --blue-l:    #4a94f0;
-  --blue-gl:   rgba(42,125,225,0.18);
-  --green:     #1db954;
-  --green-d:   #17a349;
-  --red:       #e8404a;
-  --amber:     #f5a623;
-  --purple:    #7c5cfc;
-  --nav:       60px;
-  --bar:       42px;
-  --r:         10px;
-  --r2:        14px;
-  --sh:        0 4px 24px rgba(0,0,0,.45);
-  --sh2:       0 12px 40px rgba(0,0,0,.6);
+:root{
+  --bg:#07080a;--bg2:#0d0f12;--bg3:#131619;--bg4:#181b1f;--bg5:#1e2127;
+  --line:rgba(255,255,255,0.06);--line2:rgba(255,255,255,0.10);
+  --txt:#f0f2f5;--txt2:#9aa3b0;--txt3:#5e6673;
+  --blue:#2a7de1;--blue-l:#4a94f0;--blue-gl:rgba(42,125,225,0.12);
+  --green:#1db954;--amber:#f5a623;--purple:#7c5cfc;
+  --nav:60px;--r:10px;--r2:14px;
+  --sh:0 4px 24px rgba(0,0,0,.45);--sh2:0 12px 40px rgba(0,0,0,.6);
 }
-
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
-body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--txt);padding-top:var(--nav);min-height:100vh;overflow-x:hidden}
-
-/* scrollbar */
-::-webkit-scrollbar{width:4px;height:4px}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--txt);padding-top:var(--nav);overflow-x:hidden}
+::-webkit-scrollbar{width:4px}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--bg5);border-radius:99px}
-::-webkit-scrollbar-thumb:hover{background:var(--line2)}
 
-/* ═══════════════════════════════════════════════════
-   NAVBAR
-═══════════════════════════════════════════════════ */
-#nav{
-  position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:900;
-  background:rgba(7,8,10,.9);backdrop-filter:blur(24px) saturate(160%);
-  border-bottom:1px solid var(--line);
-  display:flex;align-items:center;padding:0 5%;gap:16px;
-}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--txt);flex-shrink:0}
-.brand img{height:34px;width:auto}
-.brand-name{font-family:'Familjen Grotesk',sans-serif;font-weight:700;font-size:1.15rem;line-height:1}
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;height:var(--nav);z-index:900;background:rgba(7,8,10,.92);backdrop-filter:blur(24px);border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 5%;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--txt)}
+.brand img{height:32px}
+.brand-name{font-family:'Familjen Grotesk',sans-serif;font-weight:700;font-size:1.1rem}
 .brand-name b{color:var(--blue-l)}
-.brand-tag{font-size:.55rem;color:var(--green);letter-spacing:1.2px;text-transform:uppercase;margin-top:3px;display:flex;align-items:center;gap:3px;white-space:nowrap}
+.nav-back{margin-left:auto;display:flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid var(--line);color:var(--txt2);padding:7px 14px;border-radius:8px;font-family:inherit;font-size:.8rem;font-weight:500;cursor:pointer;text-decoration:none;transition:all .15s}
+.nav-back:hover{background:var(--bg4);color:var(--txt);border-color:var(--line2)}
 
-/* search */
-.nav-search{
-  flex:1;max-width:520px;
-  display:flex;align-items:center;gap:8px;
-  background:var(--bg3);border:1px solid var(--line);
-  border-radius:8px;padding:0 14px;
-  transition:border-color .2s,box-shadow .2s;
-}
-.nav-search:focus-within{border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-gl)}
-.nav-search i{color:var(--txt3);font-size:.85rem;flex-shrink:0}
-.nav-search input{flex:1;background:none;border:none;outline:none;font-family:inherit;font-size:.85rem;color:var(--txt);padding:9px 0}
-.nav-search input::placeholder{color:var(--txt3)}
-.nav-search .clr{background:none;border:none;color:var(--txt3);cursor:pointer;padding:2px;display:none;transition:color .15s}
-.nav-search .clr:hover{color:var(--txt)}
+/* HERO */
+.hero{position:relative;padding:70px 5% 60px;overflow:hidden;background:linear-gradient(160deg,#060e24 0%,#07080a 60%)}
+.hero-glow{position:absolute;top:-60px;left:-60px;width:500px;height:500px;background:radial-gradient(circle,rgba(42,125,225,.12) 0%,transparent 65%);pointer-events:none}
+.hero-glow2{position:absolute;bottom:-100px;right:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(29,185,84,.07) 0%,transparent 65%);pointer-events:none}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:var(--blue-gl);border:1px solid rgba(42,125,225,.25);color:var(--blue-l);font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:99px;margin-bottom:18px}
+.hero h1{font-family:'Familjen Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1.15;margin-bottom:16px}
+.hero h1 span{color:var(--blue-l)}
+.hero-desc{font-size:1rem;color:var(--txt2);line-height:1.8;max-width:560px;margin-bottom:32px}
+.hero-stats{display:flex;gap:32px;flex-wrap:wrap}
+.stat{display:flex;flex-direction:column;gap:3px}
+.stat-num{font-family:'Familjen Grotesk',sans-serif;font-size:2rem;font-weight:700;color:var(--txt);line-height:1}
+.stat-lbl{font-size:.72rem;color:var(--txt3);text-transform:uppercase;letter-spacing:1px}
+.hero-divider{height:1px;background:linear-gradient(90deg,transparent,var(--blue),transparent);margin:0 5%;opacity:.3}
 
-.nav-end{display:flex;align-items:center;gap:8px;margin-left:auto;flex-shrink:0}
-.nb{
-  display:flex;align-items:center;gap:6px;
-  background:var(--bg3);border:1px solid var(--line);
-  color:var(--txt);padding:7px 13px;border-radius:8px;
-  font-family:inherit;font-size:.8rem;font-weight:500;cursor:pointer;
-  transition:background .15s,border-color .15s;white-space:nowrap;
-}
-.nb:hover{background:var(--bg4);border-color:var(--line2)}
-.nb i{font-size:.85rem}
-.cart-nb{position:relative}
-.c-badge{
-  position:absolute;top:-7px;right:-7px;
-  background:var(--red);color:#fff;
-  width:17px;height:17px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-size:.6rem;font-weight:800;border:2px solid var(--bg);
-  transition:transform .2s;
-}
-.c-badge.pop{animation:badgePop .3s ease}
-@keyframes badgePop{0%{transform:scale(1)}50%{transform:scale(1.6)}100%{transform:scale(1)}}
+/* SECTIONS */
+.section{padding:60px 5%}
+.section-alt{background:var(--bg2)}
+.s-tag{font-size:.65rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue-l);margin-bottom:10px}
+.s-title{font-family:'Familjen Grotesk',sans-serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:700;margin-bottom:14px;line-height:1.25}
+.s-body{font-size:.9rem;color:var(--txt2);line-height:1.85;max-width:680px}
 
-/* ═══════════════════════════════════════════════════
-   PROMO BANNER
-═══════════════════════════════════════════════════ */
-.promo-bar{
-  background:linear-gradient(90deg,#0f2a5e 0%,#1a3a80 40%,#0f2a5e 100%);
-  border-bottom:1px solid rgba(42,125,225,.25);
-  padding:8px 5%;
-  display:flex;align-items:center;justify-content:space-between;gap:16px;
-  font-size:.78rem;color:rgba(255,255,255,.8);
-}
-.promo-bar .pb-items{display:flex;gap:24px;flex-wrap:wrap}
-.promo-bar .pb-item{display:flex;align-items:center;gap:6px}
-.promo-bar .pb-item i{color:var(--blue-l)}
-.promo-bar .pb-cta{
-  background:var(--blue);color:#fff;padding:5px 14px;
-  border-radius:6px;font-size:.75rem;font-weight:600;
-  text-decoration:none;white-space:nowrap;transition:background .15s;
-  flex-shrink:0;
-}
-.promo-bar .pb-cta:hover{background:var(--blue-l)}
+/* TIMELINE */
+.timeline{position:relative;padding-left:28px;margin-top:32px}
+.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--blue),rgba(42,125,225,.1))}
+.tl-item{position:relative;margin-bottom:32px}
+.tl-item:last-child{margin-bottom:0}
+.tl-dot{position:absolute;left:-34px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--blue);border:3px solid var(--bg);box-shadow:0 0 0 2px var(--blue)}
+.tl-year{font-family:'Familjen Grotesk',sans-serif;font-size:.8rem;font-weight:700;color:var(--blue-l);letter-spacing:1px;margin-bottom:4px}
+.tl-title{font-size:.95rem;font-weight:700;color:var(--txt);margin-bottom:5px}
+.tl-desc{font-size:.83rem;color:var(--txt2);line-height:1.7}
 
-/* ═══════════════════════════════════════════════════
-   MOBILE CHIPS
-═══════════════════════════════════════════════════ */
-.m-chips{
-  display:none;
-  padding:10px 4%;gap:7px;
-  overflow-x:auto;-ms-overflow-style:none;scrollbar-width:none;
-  background:var(--bg);
-  border-bottom:1px solid var(--line);
-  position:sticky;top:var(--nav);z-index:800;
-}
-.m-chips::-webkit-scrollbar{display:none}
-.chip{
-  padding:6px 15px;border-radius:99px;flex-shrink:0;
-  background:var(--bg3);border:1px solid var(--line);
-  color:var(--txt2);font-size:.78rem;font-weight:500;cursor:pointer;
-  transition:all .15s;
-}
-.chip.on,.chip:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+/* SERVICES GRID */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:32px}
+.svc-card{background:var(--bg);border:1px solid var(--line);border-radius:var(--r2);padding:22px 20px;transition:border-color .2s,box-shadow .2s}
+.svc-card:hover{border-color:rgba(42,125,225,.3);box-shadow:0 0 0 1px rgba(42,125,225,.1)}
+.svc-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:14px}
+.svc-icon.blue{background:rgba(42,125,225,.12);color:var(--blue-l)}
+.svc-icon.green{background:rgba(29,185,84,.12);color:var(--green)}
+.svc-icon.purple{background:rgba(124,92,252,.12);color:var(--purple)}
+.svc-icon.amber{background:rgba(245,166,35,.12);color:var(--amber)}
+.svc-name{font-size:.9rem;font-weight:700;color:var(--txt);margin-bottom:6px}
+.svc-desc{font-size:.78rem;color:var(--txt2);line-height:1.65}
 
-/* ═══════════════════════════════════════════════════
-   CATEGORY STRIP (desktop hero row)
-═══════════════════════════════════════════════════ */
-.cat-strip{
-  padding:18px 5% 0;
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(130px,1fr));
-  gap:10px;
-}
-.cat-card{
-  background:var(--bg2);border:1px solid var(--line);
-  border-radius:var(--r2);padding:16px 12px;
-  display:flex;flex-direction:column;align-items:center;gap:8px;
-  cursor:pointer;transition:all .2s;text-align:center;
-}
-.cat-card:hover,.cat-card.on{border-color:var(--blue);background:var(--blue-gl)}
-.cat-card .cc-icon{
-  width:44px;height:44px;border-radius:10px;
-  background:var(--bg4);border:1px solid var(--line);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.1rem;color:var(--txt2);
-  transition:all .2s;
-}
-.cat-card:hover .cc-icon,.cat-card.on .cc-icon{background:var(--blue-gl);color:var(--blue-l);border-color:rgba(42,125,225,.3)}
-.cat-card .cc-name{font-size:.72rem;font-weight:600;color:var(--txt2)}
-.cat-card:hover .cc-name,.cat-card.on .cc-name{color:var(--blue-l)}
-.cat-card .cc-cnt{font-size:.65rem;color:var(--txt3)}
+/* VALUES */
+.values-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:28px}
+.val-card{background:var(--bg3);border:1px solid var(--line);border-radius:var(--r2);padding:20px 18px;text-align:center}
+.val-icon{font-size:1.5rem;margin-bottom:10px;display:block}
+.val-title{font-size:.85rem;font-weight:700;color:var(--txt);margin-bottom:5px}
+.val-desc{font-size:.75rem;color:var(--txt2);line-height:1.6}
 
-/* ═══════════════════════════════════════════════════
-   LAYOUT
-═══════════════════════════════════════════════════ */
-.layout{display:grid;grid-template-columns:220px 1fr;gap:20px;padding:20px 5% 80px;align-items:start}
+/* GUARANTEE */
+.guarantee-box{background:linear-gradient(135deg,#0a1a3a,#0f2350);border:1px solid rgba(42,125,225,.25);border-radius:var(--r2);padding:28px;margin-top:28px}
+.gb-title{font-family:'Familjen Grotesk',sans-serif;font-size:1.1rem;font-weight:700;color:var(--txt);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.gb-title i{color:var(--green)}
+.gb-desc{font-size:.85rem;color:var(--txt2);line-height:1.75;margin-bottom:16px}
+.gb-badges{display:flex;gap:10px;flex-wrap:wrap}
+.gb-badge{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:8px 14px;font-size:.78rem;color:var(--txt2)}
+.gb-badge i{color:var(--green);font-size:.8rem}
 
-/* ═══════════════════════════════════════════════════
-   SIDEBAR
-═══════════════════════════════════════════════════ */
-.sidebar{
-  background:var(--bg2);border:1px solid var(--line);
-  border-radius:var(--r2);padding:18px;
-  position:sticky;top:calc(var(--nav) + 12px);
-}
-.sb-section{margin-bottom:20px}
-.sb-section:last-child{margin-bottom:0}
-.sb-label{font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--txt3);margin-bottom:10px}
+/* LOCATIONS */
+.locations-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:28px}
+.loc-card{background:var(--bg3);border:1px solid var(--line);border-radius:var(--r2);padding:18px;transition:border-color .2s}
+.loc-card:hover{border-color:rgba(42,125,225,.3)}
+.loc-card.main{border-color:rgba(42,125,225,.3);background:var(--blue-gl)}
+.loc-badge{font-size:.6rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--blue-l);margin-bottom:8px;display:flex;align-items:center;gap:5px}
+.loc-badge.main-badge{color:var(--green)}
+.loc-city{font-family:'Familjen Grotesk',sans-serif;font-size:1rem;font-weight:700;color:var(--txt);margin-bottom:4px}
+.loc-addr{font-size:.75rem;color:var(--txt2);line-height:1.6}
 
-/* Category tree */
-.tree-item{
-  border-radius:8px;cursor:pointer;user-select:none;
-  transition:background .15s,color .15s;
-}
-.tree-head{
-  display:flex;align-items:center;gap:9px;
-  padding:8px 10px;border-radius:8px;
-  font-size:.82rem;font-weight:500;color:var(--txt2);
-  transition:all .15s;
-}
-.tree-head:hover{background:var(--bg3);color:var(--txt)}
-.tree-head.on{background:var(--blue-gl);color:var(--blue-l)}
-.tree-head .t-icon{width:18px;text-align:center;font-size:.8rem;flex-shrink:0}
-.tree-head .t-arrow{margin-left:auto;font-size:.65rem;color:var(--txt3);transition:transform .2s;flex-shrink:0}
-.tree-head.expanded .t-arrow{transform:rotate(180deg)}
-.tree-head .t-cnt{margin-left:auto;font-size:.65rem;background:var(--bg4);padding:2px 7px;border-radius:99px;color:var(--txt3);flex-shrink:0}
-.tree-head.on .t-cnt{background:rgba(42,125,225,.2);color:var(--blue-l)}
+/* MAP */
+.map-wrap{margin-top:20px;border-radius:var(--r2);overflow:hidden;border:1px solid var(--line);height:300px;background:var(--bg3);position:relative}
+.map-wrap iframe{width:100%;height:100%;border:none;filter:grayscale(40%) invert(90%) hue-rotate(180deg)}
+.map-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:12px;color:var(--txt3)}
+.map-placeholder i{font-size:2rem;opacity:.4}
+.map-placeholder p{font-size:.82rem}
+.map-placeholder a{color:var(--blue-l);font-size:.8rem;text-decoration:none;display:flex;align-items:center;gap:5px;background:var(--blue-gl);border:1px solid rgba(42,125,225,.2);padding:8px 16px;border-radius:8px;transition:all .15s}
+.map-placeholder a:hover{background:var(--blue);color:#fff}
 
-.tree-children{display:none;padding-left:10px;margin-top:2px}
-.tree-children.open{display:block}
-.tree-child{
-  display:flex;align-items:center;gap:7px;
-  padding:7px 10px 7px 28px;border-radius:7px;
-  font-size:.78rem;color:var(--txt3);cursor:pointer;
-  transition:all .15s;margin-bottom:1px;
-}
-.tree-child::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0;margin-left:-12px}
-.tree-child:hover{color:var(--txt);background:var(--bg3)}
-.tree-child.on{color:var(--blue-l);background:var(--blue-gl)}
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:28px}
+.contact-card{background:var(--bg3);border:1px solid var(--line);border-radius:var(--r2);padding:18px;display:flex;align-items:flex-start;gap:14px;text-decoration:none;transition:all .2s}
+.contact-card:hover{border-color:rgba(42,125,225,.3);transform:translateY(-2px)}
+.contact-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.contact-icon.wa{background:rgba(29,185,84,.15);color:var(--green)}
+.contact-icon.ph{background:rgba(42,125,225,.15);color:var(--blue-l)}
+.contact-icon.em{background:rgba(245,166,35,.15);color:var(--amber)}
+.contact-icon.fb{background:rgba(24,119,242,.15);color:#4a94f0}
+.contact-lbl{font-size:.65rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--txt3);margin-bottom:3px}
+.contact-val{font-size:.83rem;font-weight:600;color:var(--txt)}
 
-/* Price filter */
-.price-filter{display:flex;flex-direction:column;gap:10px}
-.price-inputs{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.price-inp-wrap{display:flex;flex-direction:column;gap:4px}
-.price-inp-wrap label{font-size:.65rem;color:var(--txt3);font-weight:500}
-.price-inp-wrap input{
-  background:var(--bg3);border:1px solid var(--line);
-  color:var(--txt);border-radius:7px;padding:7px 10px;
-  font-family:inherit;font-size:.8rem;outline:none;width:100%;
-  transition:border-color .15s;
-}
-.price-inp-wrap input:focus{border-color:var(--blue)}
-.price-apply{
-  background:var(--blue);color:#fff;border:none;
-  border-radius:7px;padding:8px;font-family:inherit;
-  font-size:.78rem;font-weight:600;cursor:pointer;transition:background .15s;
-}
-.price-apply:hover{background:var(--blue-l)}
-.price-reset{
-  background:none;border:none;color:var(--txt3);
-  font-family:inherit;font-size:.72rem;cursor:pointer;
-  text-align:center;transition:color .15s;padding:2px;
-}
-.price-reset:hover{color:var(--txt)}
+/* CTA */
+.cta-section{padding:60px 5%;text-align:center;background:linear-gradient(160deg,#06101e,#07080a)}
+.cta-title{font-family:'Familjen Grotesk',sans-serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:700;margin-bottom:10px}
+.cta-sub{font-size:.9rem;color:var(--txt2);margin-bottom:28px}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;padding:12px 24px;border-radius:10px;font-family:inherit;font-size:.88rem;font-weight:700;text-decoration:none;transition:all .15s}
+.btn-primary:hover{background:#17a349;transform:translateY(-1px)}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:var(--bg3);border:1px solid var(--line2);color:var(--txt);padding:12px 24px;border-radius:10px;font-family:inherit;font-size:.88rem;font-weight:600;text-decoration:none;transition:all .15s}
+.btn-secondary:hover{background:var(--bg4);transform:translateY(-1px)}
 
-/* ═══════════════════════════════════════════════════
-   MAIN AREA
-═══════════════════════════════════════════════════ */
-main{min-width:0}
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--line);padding:20px 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.footer-txt{font-size:.7rem;color:var(--txt3)}
+.footer-links{display:flex;gap:16px}
+.footer-links a{font-size:.72rem;color:var(--txt3);text-decoration:none;transition:color .15s}
+.footer-links a:hover{color:var(--txt)}
 
-/* breadcrumb */
-.breadcrumb{
-  display:flex;align-items:center;gap:6px;
-  font-size:.75rem;color:var(--txt3);
-  margin-bottom:14px;flex-wrap:wrap;
-}
-.breadcrumb span{cursor:pointer;transition:color .15s}
-.breadcrumb span:hover{color:var(--txt)}
-.breadcrumb span.cur{color:var(--txt);font-weight:500;cursor:default}
-.breadcrumb i{font-size:.6rem}
-
-/* toolbar */
-.toolbar{
-  display:flex;align-items:center;gap:10px;
-  margin-bottom:16px;flex-wrap:wrap;
-}
-.results-txt{font-size:.8rem;color:var(--txt3);flex:1;min-width:120px}
-.results-txt strong{color:var(--txt);font-weight:600}
-
-/* custom dropdown */
-.dropdown{position:relative}
-.dd-btn{
-  display:flex;align-items:center;gap:7px;
-  background:var(--bg3);border:1px solid var(--line);
-  color:var(--txt2);padding:7px 13px;border-radius:8px;
-  font-family:inherit;font-size:.78rem;font-weight:500;cursor:pointer;
-  transition:all .15s;white-space:nowrap;
-}
-.dd-btn:hover,.dd-btn.open{background:var(--bg4);border-color:var(--line2);color:var(--txt)}
-.dd-btn .dd-arrow{transition:transform .2s;font-size:.6rem}
-.dd-btn.open .dd-arrow{transform:rotate(180deg)}
-.dd-menu{
-  position:absolute;top:calc(100% + 6px);right:0;
-  background:var(--bg3);border:1px solid var(--line2);
-  border-radius:10px;min-width:180px;z-index:200;
-  overflow:hidden;box-shadow:var(--sh2);
-  transform:translateY(-4px);opacity:0;pointer-events:none;
-  transition:all .15s;
-}
-.dd-menu.open{transform:translateY(0);opacity:1;pointer-events:all}
-.dd-opt{
-  display:flex;align-items:center;gap:8px;
-  padding:9px 14px;font-size:.8rem;color:var(--txt2);
-  cursor:pointer;transition:all .1s;
-}
-.dd-opt:hover,.dd-opt.on{background:var(--bg4);color:var(--txt)}
-.dd-opt.on::after{content:'\f00c';font-family:'Font Awesome 6 Free';font-weight:900;margin-left:auto;color:var(--blue-l);font-size:.7rem}
-
-/* view toggle */
-.view-toggle{display:flex;background:var(--bg3);border:1px solid var(--line);border-radius:8px;overflow:hidden}
-.vt-btn{
-  width:32px;height:32px;display:flex;align-items:center;justify-content:center;
-  border:none;background:none;color:var(--txt3);cursor:pointer;
-  transition:all .15s;font-size:.8rem;
-}
-.vt-btn.on,.vt-btn:hover{background:var(--bg4);color:var(--txt)}
-
-/* active filters */
-.active-filters{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:12px}
-.af-chip{
-  display:flex;align-items:center;gap:5px;
-  background:var(--blue-gl);border:1px solid rgba(42,125,225,.3);
-  color:var(--blue-l);padding:4px 10px;border-radius:99px;
-  font-size:.72rem;font-weight:500;
-}
-.af-rm{background:none;border:none;color:var(--blue-l);cursor:pointer;padding:0 2px;font-size:.7rem;transition:color .15s}
-.af-rm:hover{color:var(--red)}
-
-/* ═══════════════════════════════════════════════════
-   PRODUCT GRID & LIST
-═══════════════════════════════════════════════════ */
-.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:12px}
-.plist{display:flex;flex-direction:column;gap:10px}
-
-/* CARD (grid) */
-.pcard{
-  background:var(--bg2);border:1px solid var(--line);
-  border-radius:var(--r2);overflow:hidden;cursor:pointer;
-  display:flex;flex-direction:column;
-  transition:transform .2s,border-color .2s,box-shadow .2s;
-  position:relative;
-}
-.pcard:hover{transform:translateY(-3px);border-color:var(--line2);box-shadow:var(--sh2)}
-
-.pcard-img{
-  width:100%;aspect-ratio:1/1;background:#fff;overflow:hidden;position:relative;
-}
-.pcard-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
-.pcard:hover .pcard-img img{transform:scale(1.06)}
-
-/* quick-buy on hover */
-.qbuy{
-  position:absolute;bottom:0;left:0;right:0;
-  background:rgba(42,125,225,.92);color:#fff;
-  border:none;padding:9px;font-family:inherit;font-size:.78rem;font-weight:600;
-  cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;
-  transform:translateY(100%);transition:transform .25s ease;
-}
-.pcard:hover .qbuy{transform:translateY(0)}
-
-.pcard-body{padding:11px;display:flex;flex-direction:column;flex:1}
-.pcard-name{
-  font-size:.82rem;font-weight:600;line-height:1.4;color:var(--txt);
-  margin-bottom:6px;
-  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
-  min-height:2.3em;
-}
-.pcard-prices{display:flex;align-items:baseline;gap:6px;margin-bottom:10px}
-.pn{font-size:1rem;font-weight:700;color:var(--txt)}
-.po{font-size:.72rem;color:var(--txt3);text-decoration:line-through}
-.pdiscount{font-size:.68rem;background:rgba(232,64,74,.15);color:var(--red);padding:2px 6px;border-radius:4px;font-weight:700}
-
-.pcard-badges{position:absolute;top:9px;left:9px;display:flex;flex-direction:column;gap:4px;z-index:4}
-.pb{padding:3px 8px;border-radius:5px;font-size:.62rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
-.pb-rent{background:var(--purple);color:#fff}
-.pb-sale{background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);backdrop-filter:blur(4px)}
-
-.pcard-actions{display:flex;gap:7px;margin-top:auto}
-.btn-wa{
-  flex:1;display:flex;align-items:center;justify-content:center;gap:5px;
-  background:var(--green);color:#fff;border:none;border-radius:8px;
-  padding:8px 10px;font-family:inherit;font-size:.75rem;font-weight:600;
-  cursor:pointer;transition:background .15s;
-}
-.btn-wa:hover{background:var(--green-d)}
-.btn-ic{
-  width:34px;height:34px;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;
-  background:var(--bg4);border:1px solid var(--line);
-  border-radius:8px;cursor:pointer;color:var(--txt3);font-size:.8rem;
-  transition:all .15s;
-}
-.btn-ic:hover{background:var(--bg5);color:var(--txt);border-color:var(--line2)}
-
-/* LIST variant */
-.prow{
-  background:var(--bg2);border:1px solid var(--line);border-radius:var(--r2);
-  display:flex;gap:16px;padding:14px;cursor:pointer;
-  transition:border-color .2s,box-shadow .2s;
-}
-.prow:hover{border-color:var(--line2);box-shadow:var(--sh)}
-.prow-img{width:100px;height:100px;flex-shrink:0;background:#fff;border-radius:10px;overflow:hidden}
-.prow-img img{width:100%;height:100%;object-fit:cover}
-.prow-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:6px}
-.prow-name{font-size:.88rem;font-weight:600;color:var(--txt);line-height:1.4}
-.prow-desc{font-size:.75rem;color:var(--txt3);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.prow-end{display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;flex-shrink:0;gap:10px}
-.prow-price{font-size:1.05rem;font-weight:700;color:var(--txt);text-align:right}
-.prow-old{font-size:.72rem;color:var(--txt3);text-decoration:line-through;text-align:right}
-
-/* empty */
-.empty{
-  grid-column:1/-1;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  padding:80px 20px;gap:12px;color:var(--txt3);
-}
-.empty i{font-size:2.5rem;opacity:.3}
-.empty p{font-size:.9rem}
-
-/* ═══════════════════════════════════════════════════
-   SKELETON
-═══════════════════════════════════════════════════ */
-.skel{animation:shimmer 1.4s infinite}
-.skel-card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r2);overflow:hidden}
-.skel-img{width:100%;aspect-ratio:1/1;background:var(--bg4)}
-.skel-body{padding:11px;display:flex;flex-direction:column;gap:8px}
-.skel-line{height:10px;background:var(--bg4);border-radius:4px}
-.skel-line.w80{width:80%}
-.skel-line.w50{width:50%}
-@keyframes shimmer{0%,100%{opacity:.6}50%{opacity:1}}
-
-/* ═══════════════════════════════════════════════════
-   MODALS
-═══════════════════════════════════════════════════ */
-.overlay{
-  position:fixed;inset:0;background:rgba(0,0,0,.8);
-  backdrop-filter:blur(8px);z-index:1000;
-  display:none;align-items:center;justify-content:center;padding:20px;
-}
-.overlay.on{display:flex}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-
-/* Product modal */
-.prod-modal{
-  background:var(--bg2);border:1px solid var(--line);border-radius:18px;
-  width:100%;max-width:800px;display:grid;grid-template-columns:1fr 1fr;
-  overflow:hidden;position:relative;animation:fadeUp .22s ease;
-}
-.m-close{
-  position:absolute;top:12px;right:12px;z-index:20;
-  width:30px;height:30px;border-radius:8px;
-  background:rgba(0,0,0,.6);border:1px solid var(--line2);
-  color:var(--txt);cursor:pointer;display:flex;align-items:center;justify-content:center;
-  font-size:.8rem;transition:background .15s;
-}
-.m-close:hover{background:var(--red);border-color:var(--red)}
-
-/* carousel */
-.car{position:relative;background:#fff;overflow:hidden;min-height:300px;display:flex;align-items:stretch}
-.car-track{display:flex;transition:transform .3s ease;width:100%}
-.car-slide{min-width:100%;display:flex;align-items:center;justify-content:center;padding:20px}
-.car-slide img{max-width:100%;max-height:320px;object-fit:contain}
-.car-btn{
-  position:absolute;top:50%;transform:translateY(-50%);
-  width:30px;height:30px;border-radius:50%;
-  background:rgba(0,0,0,.35);border:none;color:#fff;
-  cursor:pointer;z-index:5;display:flex;align-items:center;justify-content:center;
-  font-size:.72rem;transition:background .15s;
-}
-.car-btn:hover{background:rgba(0,0,0,.65)}
-.car-btn.prev{left:8px}
-.car-btn.next{right:8px}
-.car-dots{position:absolute;bottom:8px;width:100%;display:flex;justify-content:center;gap:4px;z-index:5}
-.cdot{width:6px;height:6px;border-radius:50%;background:rgba(0,0,0,.2);cursor:pointer;transition:all .2s}
-.cdot.on{background:var(--blue);width:14px;border-radius:99px}
-
-/* modal info */
-.m-info{padding:24px 22px;overflow-y:auto;max-height:520px;display:flex;flex-direction:column}
-.m-tag{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap}
-.m-badge{padding:3px 9px;border-radius:5px;font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
-.m-badge.rent{background:var(--purple);color:#fff}
-.m-badge.cat{background:var(--bg4);color:var(--txt2)}
-.m-name{font-family:'Familjen Grotesk',sans-serif;font-size:1.15rem;font-weight:700;line-height:1.3;margin-bottom:10px;padding-right:28px}
-.m-desc{font-size:.82rem;color:var(--txt2);line-height:1.75;margin-bottom:16px;white-space:pre-line}
-.m-prices{margin-bottom:20px;padding:12px 14px;background:var(--bg3);border-radius:10px;border:1px solid var(--line)}
-.m-old{font-size:.8rem;color:var(--txt3);text-decoration:line-through;margin-bottom:2px}
-.m-price{font-family:'Familjen Grotesk',sans-serif;font-size:1.7rem;font-weight:700;color:var(--txt)}
-.m-saving{font-size:.75rem;color:var(--green);margin-top:3px}
-.m-avail{display:flex;align-items:center;gap:6px;font-size:.75rem;margin-bottom:16px}
-.m-avail i{color:var(--green)}
-.m-btns{display:flex;flex-direction:column;gap:8px;margin-top:auto}
-.mbtn{
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  border:none;border-radius:10px;padding:12px;
-  font-family:inherit;font-size:.85rem;font-weight:600;cursor:pointer;transition:all .15s;
-}
-.mbtn-wa{background:var(--green);color:#fff}
-.mbtn-wa:hover{background:var(--green-d)}
-.mbtn-cart{background:var(--bg4);border:1px solid var(--line);color:var(--txt)}
-.mbtn-cart:hover{background:var(--bg5);border-color:var(--line2)}
-.mbtn-share{background:var(--bg3);border:1px solid var(--line);color:var(--txt2);font-size:.8rem;padding:9px}
-.mbtn-share:hover{background:var(--bg4);color:var(--txt)}
-
-/* Cart panel */
-#cartModal{justify-content:flex-end;padding:0}
-.cart-panel{
-  background:var(--bg2);border-left:1px solid var(--line);
-  width:100%;max-width:380px;height:100dvh;
-  display:flex;flex-direction:column;padding:0;
-  transform:translateX(100%);transition:transform .3s ease;
-}
-#cartModal.on .cart-panel{transform:translateX(0)}
-.cp-head{
-  padding:20px 22px 16px;border-bottom:1px solid var(--line);
-  display:flex;align-items:center;justify-content:space-between;
-}
-.cp-title{font-family:'Familjen Grotesk',sans-serif;font-size:1.05rem;font-weight:700}
-.cp-close{
-  width:28px;height:28px;border-radius:7px;
-  background:var(--bg4);border:1px solid var(--line);
-  color:var(--txt);cursor:pointer;display:flex;align-items:center;justify-content:center;
-  font-size:.78rem;transition:all .15s;
-}
-.cp-close:hover{background:var(--red);border-color:var(--red)}
-.cp-body{flex:1;overflow-y:auto;padding:16px 22px}
-.cp-empty{
-  display:flex;flex-direction:column;align-items:center;
-  justify-content:center;height:100%;gap:12px;color:var(--txt3);
-}
-.cp-empty i{font-size:2.2rem;opacity:.25}
-.cp-empty p{font-size:.85rem}
-.ci{
-  display:flex;gap:12px;padding:12px 0;
-  border-bottom:1px solid var(--line);animation:fadeUp .2s ease;
-}
-.ci-img{
-  width:52px;height:52px;border-radius:9px;
-  background:#fff;overflow:hidden;flex-shrink:0;
-}
-.ci-img img{width:100%;height:100%;object-fit:cover}
-.ci-info{flex:1;min-width:0}
-.ci-name{font-size:.8rem;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:3px}
-.ci-price{font-size:.82rem;color:var(--blue-l);font-weight:700}
-.ci-rm{
-  background:none;border:none;color:var(--txt3);cursor:pointer;
-  align-self:center;padding:6px;flex-shrink:0;
-  font-size:.85rem;transition:color .15s;
-}
-.ci-rm:hover{color:var(--red)}
-.cp-foot{padding:16px 22px;border-top:1px solid var(--line)}
-.cp-total{
-  display:flex;justify-content:space-between;align-items:center;
-  margin-bottom:4px;
-}
-.cp-tlabel{font-size:.8rem;color:var(--txt3)}
-.cp-tval{font-family:'Familjen Grotesk',sans-serif;font-size:1.2rem;font-weight:700}
-.cp-sub{font-size:.7rem;color:var(--txt3);margin-bottom:14px}
-
-/* Support modal */
-.sup-box{
-  background:var(--bg2);border:1px solid var(--line);
-  border-radius:18px;padding:26px;width:100%;max-width:340px;
-  position:relative;animation:fadeUp .22s ease;
-}
-.sup-title{font-family:'Familjen Grotesk',sans-serif;font-size:1.05rem;font-weight:700;margin-bottom:5px}
-.sup-sub{font-size:.8rem;color:var(--txt3);margin-bottom:18px}
-.sup-links{display:flex;flex-direction:column;gap:9px}
-.sup-link{
-  display:flex;align-items:center;gap:12px;
-  padding:13px 16px;border-radius:10px;
-  text-decoration:none;color:#fff;font-weight:600;font-size:.85rem;
-  transition:opacity .15s;
-}
-.sup-link:hover{opacity:.88}
-.sup-link.ph{background:var(--blue)}
-.sup-link.wa{background:var(--green)}
-
-/* ═══════════════════════════════════════════════════
-   TOAST
-═══════════════════════════════════════════════════ */
-.toast{
-  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(12px);
-  background:var(--bg3);border:1px solid var(--line2);color:var(--txt);
-  padding:9px 18px;border-radius:10px;font-size:.8rem;font-weight:500;
-  z-index:9999;opacity:0;transition:all .25s;pointer-events:none;
-  display:flex;align-items:center;gap:7px;white-space:nowrap;
-  box-shadow:var(--sh);
-}
-.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
-.toast i{font-size:.85rem}
-
-/* ═══════════════════════════════════════════════════
-   BACK TO TOP
-═══════════════════════════════════════════════════ */
-#btt{
-  position:fixed;bottom:24px;right:24px;z-index:800;
-  width:40px;height:40px;border-radius:10px;
-  background:var(--bg3);border:1px solid var(--line2);color:var(--txt2);
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;font-size:.85rem;transition:all .2s;
-  opacity:0;pointer-events:none;transform:translateY(8px);
-}
-#btt.on{opacity:1;pointer-events:all;transform:translateY(0)}
-#btt:hover{background:var(--blue);border-color:var(--blue);color:#fff}
-
-/* drag handle for mobile bottom sheets */
-.m-drag-handle{
-  display:none;
-  width:36px;height:4px;border-radius:99px;
-  background:var(--line2);margin:10px auto 0;
-  position:absolute;top:0;left:50%;transform:translateX(-50%);
-  z-index:30;
-}
 @media(max-width:640px){
-  .m-drag-handle{display:block}
+  .hero{padding:40px 4% 40px}
+  .hero-stats{gap:20px}
+  .stat-num{font-size:1.6rem}
+  .section{padding:44px 4%}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .values-grid{grid-template-columns:1fr 1fr}
+  .cta-btns{flex-direction:column;align-items:center}
+  footer{flex-direction:column;text-align:center}
 }
-
-/* ═══════════════════════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════════════════════ */
-@media(max-width:960px){
-  .layout{grid-template-columns:1fr;padding-top:8px}
-  .sidebar{display:none}
-  .cat-strip{grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:8px}
-  .m-chips{display:flex}
-  .promo-bar .pb-cta{display:none}
-  /* Offset body for sticky chips (~52px) */
-  body{padding-top:var(--nav)}
-}
-@media(max-width:640px){
-  /* Nav: taller to fit slogan */
-  :root{--nav:64px}
-  #nav{height:var(--nav);padding:0 4%;gap:10px}
-  .brand img{height:28px}
-  .brand-name{font-size:.95rem}
-  /* Slogan: smaller but ALWAYS visible */
-  .brand-tag{font-size:.5rem;letter-spacing:.8px}
-
-  /* Collapse search to icon on very small screens via JS — keep it shown but compact */
-  .nav-search{max-width:none;flex:1}
-  .nav-search input{font-size:.8rem}
-
-  /* Nav buttons: icon only */
-  .nb span{display:none}
-  .nb{width:36px;height:36px;padding:0;justify-content:center;flex-shrink:0}
-
-  /* Body padding: nav(64) + chips(~50) */
-  body{padding-top:var(--nav)}
-
-  /* Products grid */
-  .pgrid{grid-template-columns:1fr 1fr;gap:8px}
-
-  /* Product card text smaller */
-  .pcard-name{font-size:.78rem}
-  .pn{font-size:.9rem}
-  .btn-wa{font-size:.72rem;padding:7px 6px}
-  .btn-ic{width:30px;height:30px;font-size:.75rem}
-
-  /* Product modal: single column, slides up from bottom */
-  .prod-modal{
-    grid-template-columns:1fr;
-    max-height:94dvh;
-    overflow-y:auto;
-    border-radius:18px 18px 0 0;
-    width:100%;
-    align-self:flex-end;
-    margin:0;
-  }
-  #prodModal{align-items:flex-end;padding:0}
-  .car{min-height:220px}
-  .car-slide img{max-height:200px}
-  .m-info{max-height:none;padding:18px 16px}
-  .m-name{font-size:1rem}
-  .m-price{font-size:1.4rem}
-
-  /* Cart: full width slide-in */
-  #cartModal .cart-panel{max-width:100%;border-left:none;border-top:1px solid var(--line);border-radius:18px 18px 0 0}
-  #cartModal{align-items:flex-end;padding:0}
-
-  /* Cat strip hidden, chips shown */
-  .cat-strip{display:none}
-  .promo-bar{display:none}
-
-  /* Toolbar */
-  .toolbar{gap:6px;flex-wrap:nowrap}
-  .results-txt{font-size:.72rem;min-width:60px}
-  .dd-btn{font-size:.72rem;padding:6px 10px}
-
-  /* Breadcrumb compact */
-  .breadcrumb{font-size:.7rem}
-
-  /* View toggle: hide on small */
-  .view-toggle{display:none}
-}
-
 @media(max-width:400px){
-  :root{--nav:60px}
-  .brand-name{font-size:.85rem}
-  .brand-tag{font-size:.45rem}
-  .pgrid{grid-template-columns:1fr 1fr;gap:6px}
-}
-
-@media(max-width:360px){
-  .pgrid{grid-template-columns:1fr}
-  .brand-tag{display:none} /* only hide on truly tiny screens */
+  .services-grid{grid-template-columns:1fr}
+  .values-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<!-- ───────────────────── NAVBAR ───────────────────── -->
 <nav id="nav">
-  <a href="#" class="brand">
+  <a href="index.html" class="brand">
     <img src="cw_logo_blue.png" alt="CASA WINDOWS">
-    <div>
-      <div class="brand-name">CASA<b>WINDOWS</b></div>
-      <div class="brand-tag"><i class="fas fa-shield-halved"></i> Garantia & Nota Fiscal</div>
-    </div>
+    <div class="brand-name">CASA<b>WINDOWS</b></div>
   </a>
-
-  <div class="nav-search">
-    <i class="fas fa-magnifying-glass"></i>
-    <input type="text" id="searchInput" placeholder="Pesquisar produtos…" oninput="onSearch(this)">
-    <button class="clr" id="searchClr" onclick="clearSearch()"><i class="fas fa-xmark"></i></button>
-  </div>
-
-  <div class="nav-end">
-    <button class="nb" onclick="openSupport()">
-      <i class="fas fa-headset"></i>
-      <span>Suporte</span>
-    </button>
-    <button class="nb cart-nb" onclick="openCart()">
-      <i class="fas fa-bag-shopping"></i>
-      <span class="c-badge" id="cartBadge">0</span>
-    </button>
-  </div>
+  <a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i> Voltar à Loja</a>
 </nav>
 
-<!-- ─────────────────── PROMO BAR ─────────────────── -->
-<div class="promo-bar">
-  <div class="pb-items">
-    <div class="pb-item"><i class="fas fa-shield-check"></i> Garantia em todos os produtos</div>
-    <div class="pb-item"><i class="fas fa-file-invoice"></i> Nota Fiscal incluída</div>
-    <div class="pb-item"><i class="fas fa-clock"></i> Seg – Sáb · 08h – 18h</div>
-  </div>
-  <a href="https://wa.me/258842785290" target="_blank" class="pb-cta">
-    <i class="fab fa-whatsapp"></i> Falar connosco
-  </a>
-</div>
-
-<!-- ──────────────── MOBILE CHIPS ─────────────────── -->
-<div class="m-chips" id="mChips">
-  <div class="chip on" onclick="filterBy('todos',this)">Tudo</div>
-  <div class="chip" onclick="filterBy('audio',this)">Áudio</div>
-  <div class="chip" onclick="filterBy('audio-aluguer',this)">Aluguer Som</div>
-  <div class="chip" onclick="filterBy('pc',this)">Computadores</div>
-  <div class="chip" onclick="filterBy('moda',this)">Moda</div>
-  <div class="chip" onclick="filterBy('acessorios',this)">Outros</div>
-</div>
-
-<!-- ─────────────────── CAT STRIP ─────────────────── -->
-<div class="cat-strip" id="catStrip"></div>
-
-<!-- ───────────────────── LAYOUT ──────────────────── -->
-<div class="layout">
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-
-    <!-- Category tree -->
-    <div class="sb-section">
-      <div class="sb-label">Categorias</div>
-
-      <div class="tree-item">
-        <div class="tree-head on" id="th-todos" onclick="filterBy('todos',this)">
-          <span class="t-icon"><i class="fas fa-border-all"></i></span>
-          Ver Tudo
-          <span class="t-cnt" id="cn-todos">0</span>
-        </div>
-      </div>
-
-      <div class="tree-item">
-        <div class="tree-head" id="th-audio" onclick="filterBy('audio',this);toggleTree('tc-audio',this)">
-          <span class="t-icon"><i class="fas fa-waveform-lines"></i></span>
-          Áudio Profissional
-          <span class="t-cnt" id="cn-audio">0</span>
-          <i class="fas fa-chevron-down t-arrow"></i>
-        </div>
-        <div class="tree-children" id="tc-audio">
-          <div class="tree-child" onclick="filterBy('audio-aluguer',this)">Aluguer de Som</div>
-          <div class="tree-child" onclick="filterBy('audio-venda',this)">Equipamento à Venda</div>
-        </div>
-      </div>
-
-      <div class="tree-item">
-        <div class="tree-head" id="th-pc" onclick="filterBy('pc',this);toggleTree('tc-pc',this)">
-          <span class="t-icon"><i class="fas fa-laptop"></i></span>
-          Computadores
-          <span class="t-cnt" id="cn-pc">0</span>
-          <i class="fas fa-chevron-down t-arrow"></i>
-        </div>
-        <div class="tree-children" id="tc-pc">
-          <div class="tree-child" onclick="filterBy('pc-celeron',this)">Série Celeron</div>
-          <div class="tree-child" onclick="filterBy('pc-corei3',this)">Core i3</div>
-          <div class="tree-child" onclick="filterBy('pc-corei5',this)">Core i5</div>
-          <div class="tree-child" onclick="filterBy('pc-desktop',this)">Desktops</div>
-          <div class="tree-child" onclick="filterBy('pc-monitor',this)">Monitores</div>
-          <div class="tree-child" onclick="filterBy('pc-projector',this)">Projectores</div>
-          <div class="tree-child" onclick="filterBy('pc-hardware',this)">Hardware</div>
-          <div class="tree-child" onclick="filterBy('pc-acessorios',this)">Acessórios PC</div>
-        </div>
-      </div>
-
-      <div class="tree-item">
-        <div class="tree-head" id="th-moda" onclick="filterBy('moda',this)">
-          <span class="t-icon"><i class="fas fa-shirt"></i></span>
-          Moda e Estilo
-          <span class="t-cnt" id="cn-moda">0</span>
-        </div>
-      </div>
-
-      <div class="tree-item">
-        <div class="tree-head" id="th-acessorios" onclick="filterBy('acessorios',this)">
-          <span class="t-icon"><i class="fas fa-sparkles"></i></span>
-          Outros
-          <span class="t-cnt" id="cn-acessorios">0</span>
-        </div>
-      </div>
-
-      <div style="margin-top:10px;border-top:1px solid var(--line);padding-top:10px">
-        <div class="tree-head" onclick="window.location.href='talvez.html'">
-          <span class="t-icon"><i class="fas fa-circle-info"></i></span>
-          Sobre Nós
-        </div>
-      </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-tag"><i class="fas fa-shield-check"></i> Serviços com Garantia e Nota Fiscal</div>
+  <h1>A tecnologia que<br><span>Nampula merece</span></h1>
+  <p class="hero-desc">Desde 2018 a fornecer computadores, equipamento audiovisual e serviços de tecnologia com qualidade, garantia e nota fiscal. Hoje presentes em quatro cidades de Moçambique.</p>
+  <div class="hero-stats">
+    <div class="stat">
+      <span class="stat-num">2018</span>
+      <span class="stat-lbl">Ano de fundação</span>
     </div>
-
-    <!-- Price filter -->
-    <div class="sb-section">
-      <div class="sb-label">Filtrar por Preço</div>
-      <div class="price-filter">
-        <div class="price-inputs">
-          <div class="price-inp-wrap">
-            <label>Mínimo (MT)</label>
-            <input type="number" id="pMin" placeholder="0" min="0">
-          </div>
-          <div class="price-inp-wrap">
-            <label>Máximo (MT)</label>
-            <input type="number" id="pMax" placeholder="Sem limite" min="0">
-          </div>
-        </div>
-        <button class="price-apply" onclick="applyPrice()"><i class="fas fa-sliders"></i> Aplicar</button>
-        <button class="price-reset" onclick="resetPrice()">Remover filtro de preço</button>
-      </div>
+    <div class="stat">
+      <span class="stat-num">4</span>
+      <span class="stat-lbl">Cidades</span>
     </div>
-
-  </aside>
-
-  <!-- MAIN -->
-  <main>
-    <!-- Breadcrumb -->
-    <div class="breadcrumb" id="breadcrumb">
-      <span onclick="filterBy('todos',document.getElementById('th-todos'))">Início</span>
-      <i class="fas fa-chevron-right"></i>
-      <span class="cur" id="bc-cur">Todos os Produtos</span>
+    <div class="stat">
+      <span class="stat-num">4</span>
+      <span class="stat-lbl">Áreas de serviço</span>
     </div>
-
-    <!-- Toolbar -->
-    <div class="toolbar">
-      <span class="results-txt"><strong id="rCount">0</strong> produtos</span>
-
-      <!-- Sort dropdown -->
-      <div class="dropdown" id="sortDD">
-        <button class="dd-btn" id="sortBtn" onclick="toggleDD('sortDD')">
-          <i class="fas fa-arrow-up-arrow-down"></i>
-          <span id="sortLabel">Ordenar</span>
-          <i class="fas fa-chevron-down dd-arrow"></i>
-        </button>
-        <div class="dd-menu" id="sortMenu">
-          <div class="dd-opt on" data-sort="default" onclick="setSort(this,'default','Padrão')">Padrão</div>
-          <div class="dd-opt" data-sort="price-asc" onclick="setSort(this,'price-asc','Preço ↑')">Preço: Menor → Maior</div>
-          <div class="dd-opt" data-sort="price-desc" onclick="setSort(this,'price-desc','Preço ↓')">Preço: Maior → Menor</div>
-          <div class="dd-opt" data-sort="name" onclick="setSort(this,'name','Nome A–Z')">Nome A → Z</div>
-        </div>
-      </div>
-
-      <!-- View toggle -->
-      <div class="view-toggle">
-        <button class="vt-btn on" id="vt-grid" title="Grelha" onclick="setView('grid')"><i class="fas fa-grid-2"></i></button>
-        <button class="vt-btn" id="vt-list" title="Lista" onclick="setView('list')"><i class="fas fa-list"></i></button>
-      </div>
-    </div>
-
-    <!-- Active filters -->
-    <div class="active-filters" id="activeFilters"></div>
-
-    <!-- Grid -->
-    <div class="pgrid" id="productGrid"></div>
-  </main>
-</div>
-
-<!-- ─────────────── MODAL: PRODUTO ────────────────── -->
-<div class="overlay" id="prodModal" onclick="overlayClose(event,'prodModal')">
-  <div class="prod-modal">
-    <div class="m-drag-handle"></div>
-    <button class="m-close" onclick="closeModal('prodModal')"><i class="fas fa-xmark"></i></button>
-    <div class="car" id="carWrap">
-      <button class="car-btn prev" onclick="cSlide(-1)"><i class="fas fa-chevron-left"></i></button>
-      <div class="car-track" id="carTrack"></div>
-      <button class="car-btn next" onclick="cSlide(1)"><i class="fas fa-chevron-right"></i></button>
-      <div class="car-dots" id="carDots"></div>
-    </div>
-    <div class="m-info">
-      <div class="m-tag" id="mTags"></div>
-      <h2 class="m-name" id="mName"></h2>
-      <p class="m-desc" id="mDesc"></p>
-      <div class="m-prices">
-        <div class="m-old" id="mOld"></div>
-        <div class="m-price" id="mPrice"></div>
-        <div class="m-saving" id="mSaving"></div>
-      </div>
-      <div class="m-avail" id="mAvail"></div>
-      <div class="m-btns">
-        <button class="mbtn mbtn-wa" id="mBtnWA"><i class="fab fa-whatsapp"></i> <span id="mBtnLbl">Comprar agora</span></button>
-        <button class="mbtn mbtn-cart" id="mBtnCart"><i class="fas fa-bag-shopping"></i> Adicionar ao carrinho</button>
-        <button class="mbtn mbtn-share" onclick="shareProd()"><i class="fas fa-arrow-up-from-bracket"></i> Partilhar produto</button>
-      </div>
+    <div class="stat">
+      <span class="stat-num">24h</span>
+      <span class="stat-lbl">Disponibilidade</span>
     </div>
   </div>
-</div>
+</section>
+<div class="hero-divider"></div>
 
-<!-- ─────────────── MODAL: CARRINHO ───────────────── -->
-<div class="overlay" id="cartModal" onclick="overlayClose(event,'cartModal')">
-  <div class="cart-panel">
-    <div class="cp-head">
-      <span class="cp-title">Carrinho (<span id="cpCount">0</span>)</span>
-      <button class="cp-close" onclick="closeModal('cartModal')"><i class="fas fa-xmark"></i></button>
-    </div>
-    <div class="cp-body" id="cpBody"></div>
-    <div class="cp-foot">
-      <div class="cp-total">
-        <span class="cp-tlabel">Total estimado</span>
-        <span class="cp-tval" id="cpTotal">0 MT</span>
-      </div>
-      <p class="cp-sub">Preço final confirmado no WhatsApp</p>
-      <button class="mbtn mbtn-wa" onclick="checkout()" style="width:100%">
-        <i class="fab fa-whatsapp"></i> Finalizar no WhatsApp
-      </button>
-    </div>
-  </div>
-</div>
+<!-- HISTÓRIA / TIMELINE -->
+<section class="section">
+  <div class="s-tag">A nossa história</div>
+  <h2 class="s-title">De uma loja a uma empresa<br>presente em todo o Norte</h2>
+  <p class="s-body">A Casa Windows nasceu com um objectivo simples: trazer tecnologia de qualidade a Nampula. Com o tempo, crescemos, evoluímos e hoje somos muito mais do que uma loja de computadores.</p>
 
-<!-- ─────────────── MODAL: SUPORTE ────────────────── -->
-<div class="overlay" id="supModal" onclick="overlayClose(event,'supModal')">
-  <div class="sup-box">
-    <button class="m-close" onclick="closeModal('supModal')"><i class="fas fa-xmark"></i></button>
-    <h2 class="sup-title">Como podemos ajudar?</h2>
-    <p class="sup-sub">Estamos disponíveis Seg–Sáb · 08h–18h</p>
-    <div class="sup-links">
-      <a href="tel:+258842785290" class="sup-link ph"><i class="fas fa-phone"></i> Ligar agora · +258 84 278 5290</a>
-      <a href="https://wa.me/258842785290?text=Olá Casa Windows! Preciso de ajuda." target="_blank" class="sup-link wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-year">2018</div>
+      <div class="tl-title">Fundação em Nampula</div>
+      <div class="tl-desc">A Casa Windows abre as portas focada na venda de computadores portáteis, de mesa e acessórios. O compromisso com garantia e nota fiscal é parte da identidade desde o primeiro dia.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-year">2021</div>
+      <div class="tl-title">Expansão para 4 áreas de serviço</div>
+      <div class="tl-desc">A empresa alarga os horizontes e passa a oferecer Marketing & Fornecimento, Locação & Cobertura de Eventos, Reprografia e Reparação & Manutenção — tornando-se uma solução completa de tecnologia.</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-year">Hoje</div>
+      <div class="tl-title">4 cidades, 1 missão</div>
+      <div class="tl-desc">Com lojas em Nampula (2 lojas), Tete e Pemba, a Casa Windows serve clientes em todo o Norte de Moçambique, com a mesma qualidade e compromisso de sempre.</div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- TOAST & BTT -->
-<div class="toast" id="toast"></div>
-<button id="btt" onclick="scrollTo({top:0,behavior:'smooth'})" title="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+<!-- IDENTIDADE E MISSÃO -->
+<section class="section section-alt">
+  <div class="s-tag">Identidade e Missão</div>
+  <h2 class="s-title">Quem somos e para onde vamos</h2>
+  <p class="s-body">Somos uma empresa individual prestadora de serviços diversos na área de tecnologias de informação, que pretende ser reconhecida pela solidez e competência, tanto nos mercados nacionais como internacionais, bem como por todos os nossos clientes e colaboradores.</p>
 
-<!-- ═══════════════════════════════════════════════
-     JAVASCRIPT
-═══════════════════════════════════════════════ -->
-<script>
-const WA = "258842785290";
-let cart = [];
-let curProdId = null;
-let cIdx = 0, cTotal = 0;
-let activeFilter = 'todos';
-let activeSort   = 'default';
-let searchQ      = '';
-let priceMin     = null;
-let priceMax     = null;
-let viewMode     = 'grid';
-
-/* ── DB ───────────────────────────────────────────── */
-const DB = [
-  {id:11,tag:'pc-acessorios',rent:false,name:'Carregadores de Laptop Universais',price:1000,imgs:['CARREGADORES 1000MT .jpg','CARREGADORES 1000MT 66.jpg'],desc:'Carregadores para HP, DELL, ASUS, LENOVO, TOSHIBA.'},
-  {id:45,tag:'acessorios',rent:false,name:'Cabo/Adaptador Type-C',price:1500,imgs:['TYPE-C 1,500MT.png','TYPE-C 1,500MT4.png','TYPE-C 1,500MT6.webp'],desc:'Acessórios USB Type-C.'},
-  {id:7,tag:'pc-celeron',rent:false,name:'Laptops Série Intel Celeron',price:15000,imgs:['CELERON.jpg','CELERON1.jpg','CELERON2.jpg','CELERON3.jpg','CELERON4.jpg'],desc:'■ 4GB - 8GB Ram\n■ 256GB - 512GB SSD/HDD\n■ Bateria Excelente'},
-  {id:9,tag:'pc-corei3',rent:false,name:'Laptop Série Core i3',price:25000,imgs:['CORE i3.jpg','CORE i3 4.webp','CORE i3 8.jpeg','CORE i3 9.jpg','CORE i3 222.jpeg'],desc:'■ Core i3\n■ 10ª - 13ª geração\n■ 4GB - 8GB Ram\n■ 256GB - 512GB SSD/HDD\n■ Bateria Excelente'},
-  {id:43,tag:'pc-corei5',rent:false,name:'Laptop Série Core i5',price:35000,imgs:['SÉRIE CORE i5 35,000MT.png','SÉRIE CORE i5 35,000MT1.jpg','SÉRIE CORE i5 35,000MT4.jpeg','SÉRIE CORE i5 35,000MT7.jpg'],desc:'■ Core i5\n■ 10ª - 13ª geração\n■ 4GB - 8GB Ram\n■ 256GB - 512GB SSD/HDD\n■ Bateria Excelente'},
-  {id:15,tag:'pc-projector',rent:false,name:'Projector Standard',price:10000,imgs:['PROJECTOR 10,000MT.jpg','PROJECTOR 10,000MT2.jpg','PROJECTOR 10,000MT4.jpg'],desc:'Projector de vídeo.'},
-  {id:16,tag:'pc-projector',rent:false,name:'Projector Show Profissional',price:15000,imgs:['SHOW 15,000MT .jpeg','SHOW 15,000MT (7).jpeg','SHOW 15,000MT 2.webp','SHOW 15,000MT 5.jpeg'],desc:'Projector de alta luminosidade.'},
-  {id:12,tag:'pc-desktop',rent:false,name:'Computador Desktop',price:12000,imgs:['DESKTOP_12,000MT.jpg'],desc:'Computador Desktop de excelente performance.\nIdeal para escritórios e uso doméstico.'},
-  {id:8,tag:'pc-monitor',rent:false,name:'Monitor 20" HDMI VGA DP',price:4500,imgs:['MONITORES 4500MT.jpg','MONITORES 4500MT1.jpg','MONITORES 4500MT2.jpg','MONITORES 4500MT3.jpg'],desc:'• Tamanho: 20 Polegadas\n• Conexões: HDMI, VGA, DP\n• Alta Resolução'},
-  {id:101,tag:'pc-hardware',rent:false,name:'Processadores de Alta Performance',price:9000,imgs:['PROCESSADORES 9,000MT.jpg','PROCESSADORES 9,000MT3.jpg','PROCESSADORES 9,000MT4.png','PROCESSADORES 9,000MT9.webp'],desc:'Processadores para upgrades e montagem de computadores.'},
-  {id:133,tag:'pc-hardware',rent:false,name:'Mini Processador NUC',price:6000,imgs:['MINI PROCESSADORE NUC 6,000MT.png'],desc:'Computador compacto.'},
-  {id:102,tag:'pc-hardware',rent:false,name:'Memórias RAM Profissionais',price:1500,imgs:['MEMORIAS RAM 1500MT.jpg','MEMORIAS RAM 1500MT1.jpg'],desc:'Upgrade de memória para o seu PC ou Laptop.'},
-  {id:131,tag:'pc-hardware',rent:false,name:'Disco Interno SSD',price:1500,imgs:['DISCO SSD 1,500MT.png'],desc:'Upgrade de velocidade imediato para seu PC.'},
-  {id:132,tag:'pc-hardware',rent:false,name:'Disco Rígido HDD',price:1500,imgs:['DISCO HDD 1,500MT.png'],desc:'Ampla capacidade.'},
-  {id:21,tag:'pc-acessorios',rent:false,name:'Case para HDD 2.5"',price:400,imgs:['CASE HDD 400MT.jpg','CASE HDD 400MT2.jpg','CASE HDD 400MT3.jpeg'],desc:'Caixa externa para disco.'},
-  {id:112,tag:'acessorios',rent:false,name:'Carregadores de Celulares',price:100,imgs:['CARREGADORES DE CELULARES 100MT.png','CARREGADORES DE CELULARES 100MT4.png'],desc:'Carregador compatível com diversos modelos.'},
-  {id:48,tag:'acessorios',rent:false,name:'Carregador de Telemóvel Standard',price:400,imgs:['PHONE CHARGERS 400MT.png','PHONE CHARGERS 400Mt3.png','PHONE CHARGERS 400Mt5.png'],desc:'Carregador completo de boa qualidade.'},
-  {id:49,tag:'acessorios',rent:false,name:'Carregador de Telemóvel Rápido',price:600,imgs:['PHONE CHARGERS 600Mt.png'],desc:'Carregador com suporte a carregamento rápido.'},
-  {id:47,tag:'acessorios',rent:false,name:'Cabeça de Carregador',price:200,imgs:['CABEÇA CHARGER PHONE 200MT .png','CABEÇA CHARGER PHONE 200MT 2.png','CABEÇA CHARGER PHONE 200MT e.png'],desc:'Adaptador de tomada.'},
-  {id:46,tag:'acessorios',rent:false,name:'Cabo de Dados Original',price:100,imgs:['ORIGINAL PHONE CABLE 100MT .png','ORIGINAL PHONE CABLE 100MT 2.png','ORIGINAL PHONE CABLE 100MT 3.png'],desc:'Cabo de dados e carregamento para telemóveis.'},
-  {id:113,tag:'acessorios',rent:false,name:'Cabos Cell USB',price:50,imgs:['CABOS CELL 50MT.png','CABOS CELL 50MTt.png','CABOS CELL 50MTg.png'],desc:'Cabo de dados e carregamento resistente.'},
-  {id:105,tag:'acessorios',rent:false,name:'Powerbank de Alta Capacidade',price:1000,imgs:['POWERBANK 1000MT .png','POWERBANK 1000MT 2.jpg','POWERBANK 1000MT 00.jpg','POWERBANK 1000MT 44.jpeg'],desc:'Energia extra para o seu dia.\n• Múltiplas cargas\n• Design compacto'},
-  {id:106,tag:'acessorios',rent:false,name:'Impressora Epson EcoTank L3252',price:18500,imgs:['IMPRESSORA EPSON L3252 18,500MT.jpeg'],desc:'Impressora Multifuncional com Wi-Fi.'},
-  {id:142,tag:'acessorios',rent:false,name:'Tinta para Impressora Epson',price:150,imgs:['TINTA EPSON 150MT.webp','TINTA EPSON 150MT1.jpg','TINTA EPSON 150MT3.png'],desc:'Refil de tinta para impressoras Epson EcoTank.'},
-  {id:111,tag:'acessorios',rent:false,name:'Máquina Encadernadora Profissional',price:4000,imgs:['MAQ. ENCADERNADORA 4,000MT-.webp'],desc:'Equipamento robusto.'},
-  {id:134,tag:'moda',rent:false,name:'Smart Watch Inteligente',price:1000,imgs:['SMARTWATCH 1000MT .jpg','SMARTWATCH 1000MT 2.jpg','SMARTWATCH 1000MT 3.jpg'],desc:'Relógio com notificações e monitorização física.'},
-  {id:40,tag:'moda',rent:false,name:'Sapatilhas Stan Smith',price:1300,imgs:['STAN SMITH 1,300MT.jpg','STAN SMITH 1,300MT_1.jpg','STAN SMITH 1,300MT1.jpg','STAN SMITH 1,300MT3.jpg','STAN SMITH 1,300MT4.jpg'],desc:'Sapatilhas clássicas.'},
-  {id:41,tag:'moda',rent:false,name:'Sapatilhas AirForce',price:1300,imgs:['AIRFORCE  1,300MT1_.jpg','AIRFORCE  1,300MT2.jpg','AIRFORCE  1,300MT4.jpg','AIRFORCE 1,300MT4.jpg'],desc:'Estilo icónico e durabilidade.'},
-  {id:107,tag:'moda',rent:false,name:'Relógio Casio Classic',price:250,imgs:['RELÓGIO CASIO 250MTLite.jpg'],desc:'Relógio digital clássico da Casio.'},
-  {id:103,tag:'pc-acessorios',rent:false,name:'Suporte de Notebook Ergonómico',price:750,imgs:['SUPORTE DE NOTEBOOK = 750MT.jpg','SUPORTE DE NOTEBOOK = 750MT.webp'],desc:'Suporte ajustável para melhor postura.'},
-  {id:104,tag:'acessorios',rent:false,name:'Cartões de Memória',price:350,imgs:['CARTÕES DE MEMÓRIA .jpeg'],desc:'Expansão de armazenamento.'},
-  {id:42,tag:'pc-acessorios',rent:false,name:'Macbook Peças/Acessórios',price:2000,imgs:['MACBOOK 2,000MT.jpg','MACBOOK 2,000MT.jpeg','MACBOOK 2,000MT43.png'],desc:'Acessórios e componentes para Macbook.'},
-  {id:17,tag:'pc-acessorios',rent:false,name:'Mouse Óptico',price:200,imgs:['MOUSE 200MT1.png','MOUSE 200MT2.png','MOUSE 200MT3.png','MOUSE 200MT5.png'],desc:'Mouse prático e ergonómico.'},
-  {id:44,tag:'pc-acessorios',rent:false,name:'Mouse Bluetooth',price:400,imgs:['MOUSE BLUETOOTH 400MT.jpg','MOUSE BLUETOOTH 400MT.webp','MOUSE BLUETOOTH 400MT4.webp'],desc:'Mouse sem fios.'},
-  {id:23,tag:'pc-acessorios',rent:false,name:'Teclado USB',price:400,imgs:['TECLADOS 400MT .jpg'],desc:'Teclado padrão.'},
-  {id:126,tag:'pc-acessorios',rent:false,name:'Mini Teclado Wireless',price:500,imgs:['TECLADOS MINI 500MT2.png'],desc:'Ideal para Smart TV.'},
-  {id:127,tag:'pc-acessorios',rent:false,name:'Teclado Gamer Retroiluminado',price:750,imgs:['TECLADOS GAME 750MT.png'],desc:'Teclado ergonómico retroiluminado.'},
-  {id:19,tag:'pc-acessorios',rent:false,name:'Cabo HDMI',price:100,imgs:['HDMI 100MT .jpg'],desc:'Cabo HDMI.'},
-  {id:18,tag:'pc-acessorios',rent:false,name:'Cabo de Corrente',price:100,imgs:['CORRENTE 100MT.png','CORRENTE 100MT2.webp','CORRENTE2 100MT.jpg'],desc:'Cabo de alimentação.'},
-  {id:114,tag:'pc-acessorios',rent:false,name:'HDMI 3 em 1 Switch',price:300,imgs:['HDMI 3 EM 1.png'],desc:'Switch HDMI.'},
-  {id:116,tag:'pc-acessorios',rent:false,name:'Hub de Entradas USB',price:750,imgs:['HUP DE ENTRADAS USB  750MT.png'],desc:'Expansor USB.'},
-  {id:117,tag:'acessorios',rent:false,name:'Bluetooth para Carro',price:500,imgs:['BLUETOOTH DE CARRO 500MTS.png'],desc:'Adaptador Bluetooth.'},
-  {id:118,tag:'pc-acessorios',rent:false,name:'Adaptador DP para HDMI',price:300,imgs:['ADAPTADORES DP HDMI = 300MT.png'],desc:'Conversor DP para HDMI.'},
-  {id:119,tag:'pc-acessorios',rent:false,name:'Adaptador Multiportas DP VGA DVI',price:400,imgs:['ADAPTADORES DP VGA DVI DP= 400MT.png'],desc:'Adaptador versátil.'},
-  {id:120,tag:'acessorios',rent:false,name:'Estetoscópio Binário Profissional',price:1000,imgs:['ESTETOSCÓPIO BINÁR 1,000MT.jpg'],desc:'Equipamento médico.'},
-  {id:121,tag:'acessorios',rent:false,name:'Remotes Universais',price:250,imgs:['REMOTES UNIVERSAIS = 250MT_.jpg'],desc:'Comando universal.'},
-  {id:122,tag:'acessorios',rent:false,name:'Esfigmomanómetro Manual',price:1500,imgs:['APARELHO DE PRESSÃO 1000MT .jpg','APARELHO DE PRESSÃO 1000MT 2.jpg'],desc:'Aparelho de pressão.'},
-  {id:123,tag:'acessorios',rent:false,name:'Álcool 70%',price:500,imgs:['ALCOOL 70% = 500MT.png'],desc:'Desinfetante.'},
-  {id:130,tag:'acessorios',rent:false,name:'Oxímetro de Pulso',price:400,imgs:['OXÍMETRO 400MT.png'],desc:'Medição de oxigénio.'},
-  {id:135,tag:'pc-hardware',rent:false,name:'Servidores de Dados',price:4500,imgs:['SERVIDORES 4,500MT.jpeg'],desc:'Infraestrutura de rede.'},
-  {id:136,tag:'acessorios',rent:false,name:'Adaptador OTG',price:80,imgs:['OTG 80MT.png'],desc:'Ligue pen drives ao telemóvel.'},
-  {id:137,tag:'acessorios',rent:false,name:'Plástico Aderente',price:500,imgs:['PLÁSTICO ADERENTES 500MT.jpg','PLÁSTICO ADERENTES 500MT2.jpg','PLÁSTICO ADERENTES 500MT3.jpg'],desc:'Rolo de plástico aderente multiuso.'},
-  {id:139,tag:'pc-acessorios',rent:false,name:'Cabos de Imagem',price:100,imgs:['CABOS DE IMAGEM 100MT 1.jpg','CABOS DE IMAGEM 100MT 4.jpeg','CABOS DE IMAGEM 100MT5.jpeg'],desc:'Cabos diversos de vídeo/imagem.'},
-  {id:110,tag:'audio-venda',rent:false,name:'AirPods Wireless',price:800,imgs:['AIRPODS 800MT.jpg','AIRPODS 800MT00.jpg'],desc:'Auriculares Bluetooth sem fios.\n• Conexão rápida\n• Estojo de carregamento'},
-  {id:115,tag:'audio-venda',rent:false,name:'AirPods Normal Wireless',price:350,imgs:['AIRPODS NORMAL 350MT.png','AIRPODS NORMAL 350MTh.png','AIRPODS NORMAL 350MTy.png'],desc:'Auscultadores Bluetooth ergonómicos.'},
-  {id:129,tag:'audio-venda',rent:false,name:'Auricular a Fio Standard',price:50,imgs:['AURICULAR A FIO 50MT.png','AURICULAR A FIO 50MTr.png','AURICULAR A FIO 50MTf.png'],desc:'Auscultadores com fio simples e eficazes.'},
-  {id:124,tag:'audio-venda',rent:false,name:'Caixa de Som Portátil',price:1500,imgs:['CAIXA DE SOM 1,500MT.png','CAIXA DE SOM 1,500MT3.png'],desc:'Som potente e design compacto.'},
-  {id:125,tag:'audio-venda',rent:false,name:'Barra de Som Soundbar',price:1500,imgs:['BARRA DE SOM 1,500MT.png','BARRA DE SOM 1,500MT5.png'],desc:'Melhor qualidade de áudio para sua TV ou PC.'},
-  {id:24,tag:'audio-venda',rent:false,name:'Headphones JBL',price:1000,imgs:['JBL HEADPHONE 1000MT .jpg','JBL HEADPHONE 1000MT .png','JBL HEADPHONE 1000MT 1.jpg','JBL HEADPHONE 1000MT 4.jpg'],desc:'Auscultadores com graves potentes.'},
-  {id:31,tag:'audio-venda',rent:false,name:'Microfone JBL Sem Fios',price:5000,imgs:['MICROFONE JBL 5,000MT .jpg','MICROFONE JBL 5,000MT 1.jpg'],desc:'Microfone sem fios de alta fidelidade da JBL.'},
-  {id:108,tag:'audio-venda',rent:false,name:'Cabo de Som XLR Profissional',price:500,imgs:['CABO DE SOM XRL 500MT.png'],desc:'Cabo balanceado.'},
-  {id:109,tag:'audio-venda',rent:false,name:'Tweeter de Colunas (Par)',price:400,imgs:['TWEETER DE CULUNAS 400MT.jpeg'],desc:'Reposição de agudos.'},
-  {id:25,tag:'audio-venda',rent:false,name:'Bass Dupla Profissional',price:50000,imgs:['BASS DUPLA 50,000MT.jpg','BASS DUPLA 50,000MT1.jpg','BASS DUPLA 50,000MT3.jpg','BASS DUPLA 50,000MT4.jpg'],desc:'Subwoofer de alta potência.'},
-  {id:28,tag:'audio-venda',rent:false,name:'Coluna Top 15 Polegadas',price:25000,imgs:['TOP 15 POLEGADA 25,000MT.jpg','TOP 15 POLEGADA 25,000MT.jpeg','TOP 15 POLEGADA 25,000MT.png','TOP 15 POLEGADA 25,000MT2.jpg'],desc:'Coluna Top de alta qualidade.'},
-  {id:32,tag:'audio-venda',rent:false,name:'Microfone Standard',price:2500,imgs:['MICRO 2,500MT .jpg','MICRO 2,500MT1.jpg'],desc:'Microfone sem fios.'},
-  {id:33,tag:'audio-venda',rent:false,name:'Mesa de Som Profissional',price:8500,imgs:['MESA DE SOM 8,500MT .jpg','MESA DE SOM 8,500MT 2.jpg','MESA DE SOM 8,500MT 23.jpg'],desc:'Mixer de áudio.'},
-  {id:34,tag:'audio-venda',rent:false,name:'Amplificador 1000W',price:12000,imgs:['AMPLIFICADOR 1000W = 12,000MT.jpg','AMPLIFICADOR 1000W = 12,000MT.png','AMPLIFICADOR 1000W = 12,000MT3.jpg'],desc:'Potência de 1000 Watts.'},
-  {id:35,tag:'audio-venda',rent:false,name:'Amplificador 3000W',price:30000,imgs:['AMPLIFICADOR 3000W = 30,000MT.jpg'],desc:'Amplificador 3000W.'},
-  {id:36,tag:'audio-venda',rent:false,name:'Crossover',price:5000,imgs:['CROSSOVER 5,000MT.jpg','CROSSOVER 5,000MT1.jpg','CROSSOVER 5,000MT3.jpg'],desc:'Divisor de frequências.'},
-  {id:37,tag:'audio-venda',rent:false,name:'Cabo de Som 10M',price:2000,imgs:['CABO DE SOM 10M = 2000MT .jpg','CABO DE SOM 10M = 2000MT 1.png','CABO DE SOM 10M = 2000MT 4.jpg'],desc:'Cabo 10 metros.'},
-  {id:38,tag:'audio-venda',rent:false,name:'Conector Speakon',price:100,imgs:['SPEAKON PINO 100MT.png','SPEAKON PINO 100MT1.png','SPEAKON PINO 100MT3.png'],desc:'Ficha Speakon.'},
-  {id:39,tag:'audio-venda',rent:false,name:'Conector Jack P10',price:100,imgs:['PINO JACK 100MT .jpg','PINO JACK 100MT 2.jpg','PINO JACK 100MT 3.jpg'],desc:'Ficha Jack P10.'},
-  {id:128,tag:'audio-venda',rent:false,name:'Microfone de Lapela',price:7500,imgs:['MICROFONE LAPELA 7,500MT .png'],desc:'Microfone discreto.'},
-  {id:138,tag:'audio-venda',rent:false,name:'Bass Mono Profissional',price:30000,imgs:['BASS MONO 30,000MT.jpg','BASS MONO 30,000MT2.webp','BASS MONO 30,000MT4.webp','BASS MONO 30,000MT6.jpg'],desc:'Subwoofer mono de alta performance.'},
-  {id:140,tag:'audio-venda',rent:false,name:'Retorno de Palco',price:15000,imgs:['RETORNO 15,000MT.png','RETORNO 15,000MT1.jpeg','RETORNO 15,000MT3.jpg','RETORNO 15,000MT4.jpg','RETORNO 15,000MT6.jpg'],desc:'Coluna de retorno de palco para músicos.'},
-  {id:141,tag:'audio-venda',rent:false,name:'Torre 15 Polegadas',price:30000,imgs:['TORRE 15 POLEGADA 30,000MT.jpg','ORRE 15 POLEGADA 30,000MT.jpg','ORRE 15 POLEGADA 30,000MT4.jpg','ORRE 15 POLEGADA 30,000MT11.jpg'],desc:'Sistema em torre de 15 polegadas.'},
-  {id:201,tag:'audio-aluguer',rent:true,name:'Kit Lite 1',price:0,imgs:['kit_lite1.jpg'],desc:'Kit de som profissional para eventos.\nConsultar disponibilidade e preço.'},
-  {id:202,tag:'audio-aluguer',rent:true,name:'Kit Express',price:0,imgs:['kit_express.jpg'],desc:'Kit de som profissional para eventos.\nConsultar disponibilidade e preço.'},
-  {id:203,tag:'audio-aluguer',rent:true,name:'Kit Plus',price:0,imgs:['kit_plus.jpg'],desc:'Kit de som profissional para eventos.\nConsultar disponibilidade e preço.'},
-  {id:204,tag:'audio-aluguer',rent:true,name:'Kit Signature',price:0,imgs:['kit_signature.jpg'],desc:'Kit de som profissional para eventos.\nConsultar disponibilidade e preço.'},
-  {id:205,tag:'audio-aluguer',rent:true,name:'Kit Platinum',price:0,imgs:['kit_platinum.jpg'],desc:'Kit de som profissional para eventos.\nConsultar disponibilidade e preço.'},
-  {id:206,tag:'audio-aluguer',rent:true,name:'Kit Golden',price:0,imgs:['kit_golden.jpg'],desc:'Kit de som profissional para eventos.\nConsultar disponibilidade e preço.'},
-  {id:207,tag:'audio-aluguer',rent:true,name:'Kit Basic',price:0,imgs:['kit_basic.jpg'],desc:'Kit de som profissional para eventos.\nConsultar disponibilidade e preço.'},
-  {id:208,tag:'audio-aluguer',rent:true,name:'Kit Platinum 1',price:0,imgs:['kit_platinum1.jpg'],desc:'Kit de som profissional para eventos.\nConsultar disponibilidade e preço.'},
-  {id:209,tag:'audio-aluguer',rent:true,name:'Kit Platinum 2',price:0,imgs:['kit_platinum2.jpg'],desc:'Kit de som profissional para eventos.\nConsultar disponibilidade e preço.'},
-  {id:210,tag:'audio-aluguer',rent:true,name:'Kit Classic',price:0,imgs:['kit_classic.jpg'],desc:'Kit de som profissional para eventos.\nConsultar disponibilidade e preço.'},
-  {id:211,tag:'audio-aluguer',rent:true,name:'Kit Platinium Max',price:0,imgs:['kit_platinium_max.jpg'],desc:'Kit de som profissional para eventos.\nConsultar disponibilidade e preço.'},
-  {id:212,tag:'audio-aluguer',rent:true,name:'Kit Pro Max',price:0,imgs:['kit_pro_max.jpg'],desc:'Kit de som profissional para eventos.\nConsultar disponibilidade e preço.'}
-];
-
-/* ── HELPERS ──────────────────────────────────────── */
-const $  = id => document.getElementById(id);
-const fmt = n  => n.toLocaleString('pt-MZ');
-
-const CATS = [
-  {key:'todos',    label:'Ver Tudo',   icon:'fa-border-all'},
-  {key:'audio',    label:'Áudio',      icon:'fa-waveform-lines'},
-  {key:'pc',       label:'Computadores',icon:'fa-laptop'},
-  {key:'moda',     label:'Moda',       icon:'fa-shirt'},
-  {key:'acessorios',label:'Outros',    icon:'fa-sparkles'},
-];
-const CAT_LABELS = {
-  'todos':'Todos os Produtos','audio':'Áudio Profissional',
-  'audio-aluguer':'Aluguer de Som','audio-venda':'Equipamento à Venda',
-  'pc':'Computadores','pc-celeron':'Série Celeron','pc-corei3':'Core i3',
-  'pc-corei5':'Core i5','pc-desktop':'Desktops','pc-monitor':'Monitores',
-  'pc-projector':'Projectores','pc-hardware':'Hardware','pc-acessorios':'Acessórios PC',
-  'moda':'Moda e Estilo','acessorios':'Outros',
-};
-
-/* ── INIT CATEGORY STRIP ──────────────────────────── */
-function buildCatStrip() {
-  const el = $('catStrip');
-  if (!el) return;
-  el.innerHTML = CATS.map(c => {
-    const cnt = c.key === 'todos' ? DB.length : DB.filter(p => p.tag.startsWith(c.key)).length;
-    return `<div class="cat-card" id="cc-${c.key}" onclick="filterBy('${c.key}',this)">
-      <div class="cc-icon"><i class="fas ${c.icon}"></i></div>
-      <div class="cc-name">${c.label}</div>
-      <div class="cc-cnt">${cnt} produtos</div>
-    </div>`;
-  }).join('');
-}
-
-/* ── COUNTS ───────────────────────────────────────── */
-function updateCounts() {
-  const c = {
-    todos: DB.length,
-    audio: DB.filter(p=>p.tag.startsWith('audio')).length,
-    pc:    DB.filter(p=>p.tag.startsWith('pc')).length,
-    moda:  DB.filter(p=>p.tag.startsWith('moda')).length,
-    acessorios: DB.filter(p=>p.tag.startsWith('acessorios')).length,
-  };
-  Object.entries(c).forEach(([k,v]) => { const e=$('cn-'+k); if(e)e.textContent=v; });
-}
-
-/* ── FILTER / SORT ────────────────────────────────── */
-function getList() {
-  let list = activeFilter==='todos' ? [...DB] : DB.filter(p=>p.tag.startsWith(activeFilter));
-  if (searchQ) { const q=searchQ.toLowerCase(); list=list.filter(p=>p.name.toLowerCase().includes(q)||p.desc.toLowerCase().includes(q)); }
-  if (priceMin!==null) list=list.filter(p=>p.price>=priceMin||p.price===0);
-  if (priceMax!==null) list=list.filter(p=>p.price<=priceMax||p.price===0);
-  if (activeSort==='price-asc')  list.sort((a,b)=>a.price-b.price);
-  if (activeSort==='price-desc') list.sort((a,b)=>b.price-a.price);
-  if (activeSort==='name')       list.sort((a,b)=>a.name.localeCompare(b.name));
-  return list;
-}
-
-function filterBy(tag, el) {
-  activeFilter = tag;
-  searchQ = '';
-  $('searchInput').value = '';
-  $('searchClr').style.display = 'none';
-
-  // Clear all active states
-  document.querySelectorAll('.tree-head,.tree-child,.chip,.cat-card').forEach(e => e.classList.remove('on'));
-
-  // Highlight the clicked element
-  if(el) el.classList.add('on');
-
-  // Highlight matching sidebar tree head
-  const rootTag = tag.split('-')[0];
-  const th = $('th-'+rootTag);
-  if(th && th !== el) th.classList.add('on');
-
-  // Highlight cat strip card
-  const cc = $('cc-'+(tag==='todos'?'todos':rootTag));
-  if(cc) cc.classList.add('on');
-
-  // Highlight matching mobile chip (find by filter value in onclick)
-  document.querySelectorAll('.m-chips .chip').forEach(c => {
-    const onclick = c.getAttribute('onclick') || '';
-    if(onclick.includes(`'${tag}'`)) c.classList.add('on');
-  });
-
-  // Open relevant tree
-  if(tag.startsWith('pc'))    { const t=$('tc-pc');    if(t)t.classList.add('open'); const h=$('th-pc');    if(h)h.classList.add('expanded'); }
-  if(tag.startsWith('audio')) { const t=$('tc-audio'); if(t)t.classList.add('open'); const h=$('th-audio'); if(h)h.classList.add('expanded'); }
-
-  // Breadcrumb
-  const label = CAT_LABELS[tag] || tag;
-  $('bc-cur').textContent = label;
-
-  updateActiveFilters();
-  render();
-
-  // Scroll to product grid on mobile
-  if(window.innerWidth <= 960) {
-    setTimeout(() => {
-      const grid = $('productGrid');
-      if(grid) grid.scrollIntoView({behavior:'smooth', block:'start'});
-    }, 100);
-  }
-}
-
-function toggleTree(id, btn) {
-  const el = $(id);
-  if (!el) return;
-  const isOpen = el.classList.contains('open');
-  el.classList.toggle('open', !isOpen);
-  btn.classList.toggle('expanded', !isOpen);
-}
-
-function onSearch(inp) {
-  searchQ = inp.value.trim();
-  $('searchClr').style.display = searchQ ? 'block' : 'none';
-  updateActiveFilters();
-  render();
-}
-function clearSearch() {
-  $('searchInput').value = '';
-  searchQ = '';
-  $('searchClr').style.display = 'none';
-  updateActiveFilters();
-  render();
-}
-
-function applyPrice() {
-  const min = parseFloat($('pMin').value);
-  const max = parseFloat($('pMax').value);
-  priceMin = isNaN(min) ? null : min;
-  priceMax = isNaN(max) ? null : max;
-  updateActiveFilters();
-  render();
-}
-function resetPrice() {
-  priceMin = priceMax = null;
-  $('pMin').value = '';
-  $('pMax').value = '';
-  updateActiveFilters();
-  render();
-}
-
-/* Active filter chips */
-function updateActiveFilters() {
-  const wrap = $('activeFilters');
-  const chips = [];
-  if(searchQ) chips.push({label:`"${searchQ}"`, clear:clearSearch});
-  if(priceMin!==null||priceMax!==null) {
-    const label = priceMin!==null&&priceMax!==null ? `${fmt(priceMin)}–${fmt(priceMax)} MT`
-                : priceMin!==null ? `≥ ${fmt(priceMin)} MT` : `≤ ${fmt(priceMax)} MT`;
-    chips.push({label, clear:resetPrice});
-  }
-  wrap.innerHTML = chips.map((c,i) =>
-    `<div class="af-chip">${c.label}<button class="af-rm" onclick="af_clear(${i})">×</button></div>`
-  ).join('');
-  // store refs
-  wrap._clearFns = chips.map(c=>c.clear);
-}
-function af_clear(i) { $('activeFilters')._clearFns[i]?.(); }
-
-/* Sort */
-function setSort(el, val, label) {
-  activeSort = val;
-  $('sortLabel').textContent = label;
-  document.querySelectorAll('.dd-opt').forEach(e=>e.classList.remove('on'));
-  el.classList.add('on');
-  closeDD('sortDD');
-  render();
-}
-
-/* View */
-function setView(v) {
-  viewMode = v;
-  $('vt-grid').classList.toggle('on', v==='grid');
-  $('vt-list').classList.toggle('on', v==='list');
-  const g = $('productGrid');
-  g.className = v==='grid' ? 'pgrid' : 'plist';
-  render();
-}
-
-/* Dropdown */
-function toggleDD(id) {
-  const btn=$(`#${id} .dd-btn`)||document.querySelector(`#${id} .dd-btn`);
-  const menu=document.querySelector(`#${id} .dd-menu`);
-  const isOpen = menu.classList.contains('open');
-  closeAllDDs();
-  if(!isOpen){ menu.classList.add('open'); btn&&btn.classList.add('open'); }
-}
-function closeDD(id) {
-  const btn=document.querySelector(`#${id} .dd-btn`);
-  const menu=document.querySelector(`#${id} .dd-menu`);
-  if(menu) menu.classList.remove('open');
-  if(btn) btn.classList.remove('open');
-}
-function closeAllDDs() { document.querySelectorAll('.dd-menu').forEach(m=>m.classList.remove('open')); document.querySelectorAll('.dd-btn').forEach(b=>b.classList.remove('open')); }
-document.addEventListener('click', e=>{ if(!e.target.closest('.dropdown')) closeAllDDs(); });
-
-/* ── RENDER ───────────────────────────────────────── */
-function renderSkel() {
-  const g = $('productGrid');
-  g.className = 'pgrid';
-  g.innerHTML = Array(8).fill(0).map(()=>
-    `<div class="skel-card skel">
-       <div class="skel-img"></div>
-       <div class="skel-body">
-         <div class="skel-line w80"></div>
-         <div class="skel-line w50"></div>
-         <div class="skel-line w80" style="height:30px;margin-top:4px"></div>
-       </div>
-     </div>`
-  ).join('');
-}
-
-function render() {
-  const list = getList();
-  const g = $('productGrid');
-  g.className = viewMode==='grid' ? 'pgrid' : 'plist';
-  $('rCount').textContent = list.length;
-
-  if (!list.length) {
-    g.innerHTML = `<div class="empty"><i class="fas fa-box-open"></i><p>Nenhum produto encontrado</p></div>`;
-    return;
-  }
-
-  if (viewMode === 'list') {
-    g.innerHTML = list.map(p => rowHTML(p)).join('');
-  } else {
-    g.innerHTML = list.map(p => cardHTML(p)).join('');
-  }
-}
-
-function cardHTML(p) {
-  const priceStr = p.price===0 ? 'Sob Consulta' : fmt(p.price)+' MT';
-  const oldStr   = (!p.rent && p.price>0) ? fmt(Math.round(p.price*1.15))+' MT' : '';
-  const disc     = (!p.rent && p.price>0) ? '-13%' : '';
-  return `<div class="pcard" onclick="openProd(${p.id})">
-    <div class="pcard-img">
-      <img src="${p.imgs[0]}" alt="${p.name}" loading="lazy">
-      <button class="qbuy" onclick="event.stopPropagation();buyNow(${p.id})">
-        <i class="fab fa-whatsapp"></i> ${p.rent?'Reservar':'Comprar agora'}
-      </button>
+  <div class="values-grid">
+    <div class="val-card">
+      <span class="val-icon">🎯</span>
+      <div class="val-title">Objectivo</div>
+      <div class="val-desc">Compreender as necessidades dos nossos clientes, fornecendo produtos e serviços de alta qualidade com as tecnologias mais recentes.</div>
     </div>
-    <div class="pcard-badges">
-      ${p.rent?`<span class="pb pb-rent">Aluguer</span>`:`<span class="pb pb-sale">Venda</span>`}
+    <div class="val-card">
+      <span class="val-icon">💪</span>
+      <div class="val-title">Determinação</div>
+      <div class="val-desc">A nossa vontade de crescer faz com que nos desafiemos com entusiasmo a cada projecto que nos propomos.</div>
     </div>
-    <div class="pcard-body">
-      <div class="pcard-name">${p.name}</div>
-      <div class="pcard-prices">
-        <span class="pn">${priceStr}</span>
-        ${oldStr?`<span class="po">${oldStr}</span>`:''}
-        ${disc?`<span class="pdiscount">${disc}</span>`:''}
-      </div>
-      <div class="pcard-actions">
-        <button class="btn-wa" onclick="event.stopPropagation();buyNow(${p.id})">
-          <i class="fab fa-whatsapp"></i> ${p.rent?'Reservar':'Comprar'}
-        </button>
-        ${!p.rent?`<button class="btn-ic" onclick="event.stopPropagation();addCart(${p.id})" title="Carrinho"><i class="fas fa-bag-shopping"></i></button>`:''}
-      </div>
+    <div class="val-card">
+      <span class="val-icon">⚡</span>
+      <div class="val-title">Rapidez</div>
+      <div class="val-desc">Somos destacados pela qualidade dos nossos serviços e pelo curto tempo de resposta ao que nos é proposto.</div>
     </div>
-  </div>`;
-}
+    <div class="val-card">
+      <span class="val-icon">🤝</span>
+      <div class="val-title">Confiança</div>
+      <div class="val-desc">Profissionais qualificados em diversas áreas de conhecimento — uma mais-valia para todos os que nos procuram.</div>
+    </div>
+  </div>
 
-function rowHTML(p) {
-  const priceStr = p.price===0 ? 'Sob Consulta' : fmt(p.price)+' MT';
-  const oldStr   = (!p.rent && p.price>0) ? fmt(Math.round(p.price*1.15))+' MT' : '';
-  return `<div class="prow" onclick="openProd(${p.id})">
-    <div class="prow-img"><img src="${p.imgs[0]}" alt="${p.name}" loading="lazy"></div>
-    <div class="prow-body">
-      <div class="prow-name">${p.name}</div>
-      <div class="prow-desc">${p.desc.replace(/\n/g,' ')}</div>
+  <div class="guarantee-box">
+    <div class="gb-title"><i class="fas fa-shield-check"></i> Condições de Garantia</div>
+    <div class="gb-desc">Oferecemos garantia em todos os nossos produtos e serviços. A garantia inicia na data da nota fiscal e tem validade de 2 meses, comprovada pela nota fiscal. Excepções: defeitos decorrentes de uso inadequado, acidentes ou falta de manutenção preventiva.</div>
+    <div class="gb-badges">
+      <div class="gb-badge"><i class="fas fa-circle-check"></i> 2 meses de garantia</div>
+      <div class="gb-badge"><i class="fas fa-file-invoice"></i> Nota Fiscal incluída</div>
+      <div class="gb-badge"><i class="fas fa-shield-halved"></i> Todos os produtos</div>
     </div>
-    <div class="prow-end">
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="section">
+  <div class="s-tag">Os nossos serviços</div>
+  <h2 class="s-title">Uma solução completa<br>de tecnologia</h2>
+  <p class="s-body">Muito mais do que uma loja — a Casa Windows oferece quatro áreas de serviço para responder a todas as necessidades de tecnologia.</p>
+
+  <div class="services-grid">
+    <div class="svc-card">
+      <div class="svc-icon blue"><i class="fas fa-laptop"></i></div>
+      <div class="svc-name">Marketing & Fornecimento</div>
+      <div class="svc-desc">Vendemos e fornecemos computadores portáteis e de mesa, projectores, impressoras, microfones, amplificadores, colunas, teclados, mouses e acessórios.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon purple"><i class="fas fa-tower-broadcast"></i></div>
+      <div class="svc-name">Locação & Cobertura de Eventos</div>
+      <div class="svc-desc">Aluguer de equipamento audiovisual e cobertura de reuniões, casamentos, formaturas, shows, eventos culturais e desportivos.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon amber"><i class="fas fa-print"></i></div>
+      <div class="svc-name">Reprografia</div>
+      <div class="svc-desc">Cópia, impressão, digitação, organização, encadernação, plastificação, scaneamento e envio de documentos.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon green"><i class="fas fa-screwdriver-wrench"></i></div>
+      <div class="svc-name">Reparação & Manutenção</div>
+      <div class="svc-desc">Instalação de sistemas, antivírus, Microsoft Office, Wi-Fi, programação, formatação, reparação de software e hardware.</div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="section section-alt">
+  <div class="s-tag">Onde estamos</div>
+  <h2 class="s-title">Presentes em 4 cidades<br>de Moçambique</h2>
+  <p class="s-body">Da nossa sede em Nampula à expansão para Tete e Pemba — levamos tecnologia a todo o Norte do país.</p>
+
+  <div class="locations-grid">
+    <div class="loc-card main">
+      <div class="loc-badge main-badge"><i class="fas fa-star"></i> Sede Principal</div>
+      <div class="loc-city">Nampula</div>
+      <div class="loc-addr">Av. Rua dos Continuadores, ao lado da Cooperação Militar Portuguesa</div>
+    </div>
+    <div class="loc-card">
+      <div class="loc-badge"><i class="fas fa-store"></i> Loja 2</div>
+      <div class="loc-city">Nampula</div>
+      <div class="loc-addr">Segunda loja na cidade de Nampula</div>
+    </div>
+    <div class="loc-card">
+      <div class="loc-badge"><i class="fas fa-store"></i> Loja 3</div>
+      <div class="loc-city">Tete</div>
+      <div class="loc-addr">Cidade de Tete</div>
+    </div>
+    <div class="loc-card">
+      <div class="loc-badge"><i class="fas fa-store"></i> Loja 4</div>
+      <div class="loc-city">Pemba</div>
+      <div class="loc-addr">Cidade de Pemba</div>
+    </div>
+  </div>
+
+  <div class="map-wrap">
+    <div class="map-placeholder">
+      <i class="fas fa-map-location-dot"></i>
+      <p>Sede — Nampula, Moçambique</p>
+      <p style="font-size:.75rem;color:var(--txt3);text-align:center;max-width:300px">Av. Rua dos Continuadores, ao lado da Cooperação Militar Portuguesa</p>
+      <a href="https://maps.google.com/?q=Nampula,Mozambique" target="_blank" rel="noopener">
+        <i class="fas fa-diamond-turn-right"></i> Abrir no Google Maps
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTOS -->
+<section class="section">
+  <div class="s-tag">Contactos</div>
+  <h2 class="s-title">Fala connosco</h2>
+  <p class="s-body">Estamos disponíveis 24 horas por dia. Aceita pagamentos via M-Pesa, E-Mola e WhatsApp.</p>
+
+  <div class="contact-grid">
+    <a href="https://wa.me/258842785290?text=Olá Casa Windows! Preciso de ajuda." target="_blank" class="contact-card">
+      <div class="contact-icon wa"><i class="fab fa-whatsapp"></i></div>
       <div>
-        ${oldStr?`<div class="prow-old">${oldStr}</div>`:''}
-        <div class="prow-price">${priceStr}</div>
+        <div class="contact-lbl">WhatsApp</div>
+        <div class="contact-val">+258 84 278 5290</div>
       </div>
-      <div style="display:flex;gap:6px">
-        <button class="btn-wa" onclick="event.stopPropagation();buyNow(${p.id})">
-          <i class="fab fa-whatsapp"></i> ${p.rent?'Reservar':'Comprar'}
-        </button>
-        ${!p.rent?`<button class="btn-ic" onclick="event.stopPropagation();addCart(${p.id})" title="Carrinho"><i class="fas fa-bag-shopping"></i></button>`:''}
+    </a>
+    <a href="tel:+258842785290" class="contact-card">
+      <div class="contact-icon ph"><i class="fas fa-phone"></i></div>
+      <div>
+        <div class="contact-lbl">Telefone / Fax</div>
+        <div class="contact-val">84 278 5290 / 87 178 5290</div>
       </div>
-    </div>
-  </div>`;
-}
-
-/* ── PRODUCT MODAL ────────────────────────────────── */
-function openProd(id) {
-  const p = DB.find(x=>x.id===id);
-  if(!p) return;
-  curProdId = id;
-
-  // tags
-  $('mTags').innerHTML = (p.rent?`<span class="m-badge rent">Aluguer</span>`:'')+
-    `<span class="m-badge cat">${CAT_LABELS[p.tag]||p.tag}</span>`;
-
-  $('mName').textContent = p.name;
-  $('mDesc').textContent = p.desc;
-
-  // price
-  if (!p.rent && p.price>0) {
-    $('mOld').textContent = fmt(Math.round(p.price*1.15))+' MT';
-    $('mOld').style.display='block';
-    $('mSaving').innerHTML = `<i class="fas fa-tag"></i> Poupa ${fmt(Math.round(p.price*0.15))} MT`;
-    $('mSaving').style.display='block';
-  } else {
-    $('mOld').style.display='none';
-    $('mSaving').style.display='none';
-  }
-  $('mPrice').textContent = p.price===0?'Preço sob consulta':fmt(p.price)+' MT';
-
-  // availability
-  $('mAvail').innerHTML = p.rent
-    ? `<i class="fas fa-calendar-check"></i> Disponibilidade sujeita a confirmação`
-    : `<i class="fas fa-circle-check"></i> Em stock · Entrega imediata`;
-
-  $('mBtnLbl').textContent = p.rent?'Reservar agora':'Comprar agora';
-  $('mBtnWA').onclick = ()=>buyNow(id);
-  $('mBtnCart').style.display = p.rent?'none':'flex';
-  $('mBtnCart').onclick = ()=>addCart(id);
-
-  // carousel
-  const track=$('carTrack'), dots=$('carDots');
-  track.innerHTML=''; dots.innerHTML='';
-  cTotal=p.imgs.length; cIdx=0;
-  p.imgs.forEach((img,i)=>{
-    track.innerHTML+=`<div class="car-slide"><img src="${img}" alt="${p.name}"></div>`;
-    dots.innerHTML+=`<div class="cdot${i===0?' on':''}" onclick="cGoto(${i})"></div>`;
-  });
-  document.querySelectorAll('.car-btn').forEach(b=>b.style.display=cTotal>1?'flex':'none');
-  updateCar();
-  openModal('prodModal');
-}
-
-function cSlide(n){cIdx=(cIdx+n+cTotal)%cTotal;updateCar()}
-function cGoto(i){cIdx=i;updateCar()}
-function updateCar(){
-  $('carTrack').style.transform=`translateX(-${cIdx*100}%)`;
-  document.querySelectorAll('.cdot').forEach((d,i)=>d.classList.toggle('on',i===cIdx));
-}
-
-/* ── SHARE ────────────────────────────────────────── */
-function shareProd(){
-  const p=DB.find(x=>x.id===curProdId);
-  if(!p)return;
-  const url=`${location.href.split('?')[0]}?id=${p.id}`;
-  if(navigator.share){navigator.share({title:'Casa Windows',text:`${p.name} — Casa Windows`,url}).catch(()=>copyLink(url))}
-  else copyLink(url);
-}
-function copyLink(url){
-  navigator.clipboard.writeText(url).then(()=>toast('Link copiado!','fa-link')).catch(()=>toast('Erro ao copiar','fa-xmark'));
-}
-
-/* ── CART ─────────────────────────────────────────── */
-function addCart(id){
-  const p=DB.find(x=>x.id===id);
-  cart.push(p);
-  updateBadge();
-  toast(`Adicionado ao carrinho`,'fa-bag-shopping');
-  // animate badge
-  const b=$('cartBadge');
-  b.classList.remove('pop');
-  void b.offsetWidth;
-  b.classList.add('pop');
-}
-function updateBadge(){
-  $('cartBadge').textContent=cart.length;
-  $('cpCount').textContent=cart.length;
-}
-function openCart(){renderCart();openModal('cartModal')}
-function renderCart(){
-  const body=$('cpBody');
-  if(!cart.length){
-    body.innerHTML=`<div class="cp-empty"><i class="fas fa-bag-shopping"></i><p>O seu carrinho está vazio</p></div>`;
-    $('cpTotal').textContent='0 MT';
-    return;
-  }
-  let total=0;
-  body.innerHTML=cart.map((item,i)=>{
-    total+=item.price;
-    return `<div class="ci">
-      <div class="ci-img"><img src="${item.imgs[0]}" alt="${item.name}"></div>
-      <div class="ci-info">
-        <div class="ci-name">${item.name}</div>
-        <div class="ci-price">${fmt(item.price)} MT</div>
+    </a>
+    <a href="mailto:jamsonkalela@gmail.com" class="contact-card">
+      <div class="contact-icon em"><i class="fas fa-envelope"></i></div>
+      <div>
+        <div class="contact-lbl">Email</div>
+        <div class="contact-val">jamsonkalela@gmail.com</div>
       </div>
-      <button class="ci-rm" onclick="rmCart(${i})" title="Remover"><i class="fas fa-trash-can"></i></button>
-    </div>`;
-  }).join('');
-  $('cpTotal').textContent=fmt(total)+' MT';
-}
-function rmCart(i){cart.splice(i,1);updateBadge();renderCart()}
-function checkout(){
-  if(!cart.length){toast('Carrinho vazio','fa-xmark');return}
-  let msg="Olá! Vim do site da Casa Windows e gostaria de finalizar esta compra:\n\n";
-  let total=0;
-  cart.forEach(item=>{msg+=`▪️ ${item.name} — ${fmt(item.price)} MT\n`;total+=item.price});
-  msg+=`\n*TOTAL: ${fmt(total)} MT*`;
-  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`);
-}
+    </a>
+    <a href="https://www.facebook.com/profile.php?id=61562855252848" target="_blank" rel="noopener" class="contact-card">
+      <div class="contact-icon fb"><i class="fab fa-facebook"></i></div>
+      <div>
+        <div class="contact-lbl">Facebook</div>
+        <div class="contact-val">Casa Windows</div>
+      </div>
+    </a>
+  </div>
+</section>
 
-/* ── BUY NOW ──────────────────────────────────────── */
-function buyNow(id){
-  const p=DB.find(x=>x.id===id);
-  const pf=p.price===0?'a combinar':fmt(p.price)+' MT';
-  const msg=p.rent
-    ?`Olá! Vim do site da Casa Windows e gostaria de reservar: ${p.name} (Preço: ${pf})`
-    :`Olá! Vim do site da Casa Windows e tenho interesse em comprar: ${p.name} (Preço: ${pf})`;
-  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`);
-}
+<!-- CTA -->
+<section class="cta-section">
+  <h2 class="cta-title">Pronto para começar?</h2>
+  <p class="cta-sub">Visita a nossa loja online ou fala connosco directamente pelo WhatsApp.</p>
+  <div class="cta-btns">
+    <a href="index.html" class="btn-primary"><i class="fas fa-store"></i> Ver a Loja</a>
+    <a href="https://wa.me/258842785290" target="_blank" class="btn-secondary"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+  </div>
+</section>
 
-/* ── MODAL HELPERS ────────────────────────────────── */
-function openModal(id){
-  $(id).classList.add('on');
-  // Prevent body scroll on mobile (iOS fix)
-  document.body.style.overflow='hidden';
-  document.body.style.position='fixed';
-  document.body.style.width='100%';
-}
-function closeModal(id){
-  $(id).classList.remove('on');
-  document.body.style.overflow='';
-  document.body.style.position='';
-  document.body.style.width='';
-}
-function overlayClose(e,id){if(e.target.id===id)closeModal(id)}
-function openSupport(){openModal('supModal')}
+<footer>
+  <span class="footer-txt">© 2025 CASA WINDOWS · Nampula, Moçambique</span>
+  <div class="footer-links">
+    <a href="index.html">Loja</a>
+    <a href="https://wa.me/258842785290" target="_blank">WhatsApp</a>
+    <a href="https://www.facebook.com/profile.php?id=61562855252848" target="_blank">Facebook</a>
+  </div>
+</footer>
 
-/* ── TOAST ────────────────────────────────────────── */
-function toast(msg,icon='fa-check'){
-  const t=$('toast');
-  t.innerHTML=`<i class="fas ${icon}"></i> ${msg}`;
-  t.classList.add('on');
-  clearTimeout(t._t);
-  t._t=setTimeout(()=>t.classList.remove('on'),2500);
-}
-
-/* ── BACK TO TOP ──────────────────────────────────── */
-window.addEventListener('scroll',()=>{
-  $('btt').classList.toggle('on',scrollY>400);
-},{ passive:true });
-
-/* ── INIT ─────────────────────────────────────────── */
-document.addEventListener('DOMContentLoaded',()=>{
-  buildCatStrip();
-  updateCounts();
-
-  // skeleton → then real content
-  renderSkel();
-  setTimeout(()=>{
-    filterBy('todos', $('th-todos'));
-  }, 500);
-
-  // deep-link
-  const pid=new URLSearchParams(location.search).get('id');
-  if(pid) setTimeout(()=>openProd(parseInt(pid)),600);
-
-  // ── Touch swipe for carousel ──────────────────────
-  let tsX=0;
-  const carWrap=$('carWrap');
-  if(carWrap){
-    carWrap.addEventListener('touchstart',e=>{tsX=e.touches[0].clientX},{passive:true});
-    carWrap.addEventListener('touchend',e=>{
-      const dx=e.changedTouches[0].clientX-tsX;
-      if(Math.abs(dx)>40){cSlide(dx<0?1:-1)}
-    },{passive:true});
-  }
-
-  // ── Swipe down to close bottom-sheet modals on mobile ──
-  ['prodModal','cartModal'].forEach(id=>{
-    const panel = id==='cartModal'
-      ? document.querySelector('#cartModal .cart-panel')
-      : document.querySelector('#prodModal .prod-modal');
-    if(!panel) return;
-    let sy=0;
-    panel.addEventListener('touchstart',e=>{sy=e.touches[0].clientY},{passive:true});
-    panel.addEventListener('touchend',e=>{
-      if(window.innerWidth>640) return;
-      const dy=e.changedTouches[0].clientY-sy;
-      if(dy>80) closeModal(id);
-    },{passive:true});
-  });
-});
-
-// close dropdowns on scroll
-window.addEventListener('scroll',closeAllDDs,{passive:true});
-</script>
 </body>
 </html>
